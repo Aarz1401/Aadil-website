@@ -1,0 +1,483 @@
+/* Custom styling for Aadil's webpage - Aadil Chasmawala 2024 */
+.arlo_tm_news_wrap .github_link {
+    text-decoration: none;
+    color: #eee;
+    background-color:  #00ADB5;
+    font-weight: 600;
+    font-family: "Montserrat";
+    padding: 12px 35px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    color:white;
+}
+
+.arlo_tm_news_wrap .read_more :before {
+    position: absolute;
+    content: "";
+    top: 0px;
+    height: 100%;
+    left: -25%;
+    width: 0%;
+    background-color: #222831;
+    transform: skew(50deg);
+    transition-duration: .6s;
+    z-index: 1;
+}
+
+
+/* Owl Carousel */
+/* Custom styles for navigation buttons */
+.nav-btn {
+    width: 30px;
+    height: 30px;
+    background-color:  #00ADB5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+ }
+ 
+ .prev-slide:before, .next-slide:before {
+    color: #eee;
+    font-size: 20px;
+    line-height: 30px;
+ }
+ 
+ .prev-slide:before {
+    content: "<";
+ }
+ 
+ .next-slide:before {
+    content: ">";
+ }
+ 
+ /* Additional customization if needed */
+ .owl-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+ }
+ 
+ .owl-carousel .owl-nav .owl-prev {
+    left: -25px;
+ }
+ 
+ .owl-carousel .owl-nav .owl-next {
+    right: -25px;
+ }
+ 
+/* Custom styles for skills */
+.skills_icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 10%;
+    margin-bottom: 60px;
+}
+
+.icon-container {
+    position: relative;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.icon-container i {
+    font-size: 4rem;
+    color: #555;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-container:hover i {
+    color: #00ADB5;
+    transform: scale(1.2);
+}
+
+.icon-container::after {
+    content: attr(data-name);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #00ADB5;
+    font-size: 1rem;
+}
+
+.icon-container:hover::after {
+    opacity: 1;
+}
+
+  
+  
+/*Animation text 2*/
+.arlo_tm_animation_text_word2{
+	font-weight: 600;
+	line-height: 1;
+	font-family: "Montserrat";
+}
+.arlo_tm_animation_text_word2{color:  #00ADB5;}
+
+
+/* Override styles for social wrap in footer box */
+.social_wrap{
+	width: 100%;
+	height: auto;
+	float: left;
+	position: relative;
+	left: -5px;
+	margin-bottom: 10px;
+    align-self: center;
+    text-align: center;
+    align-items: center;
+
+	
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	   -moz-box-sizing: border-box; /* Firefox, other Gecko */
+			box-sizing: border-box; /* Opera/IE 8+ */
+}
+.social_wrap ul{
+	margin: 0px;
+	list-style-type: none;
+}
+.social_wrap ul li{
+	margin: 0px 10px 0px 0px;
+	display: inline-block;
+}
+.social_wrap ul li:last-child{margin-right: 0px;}
+.social_wrap ul li a{
+	text-decoration: none;
+	color: #fff;
+	
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.social_wrap ul li a:hover{color: #00ADB5;}
+
+/* Submit button styling */
+#sendButton {
+	text-decoration: none;
+    color: #fff;
+    background-color: #00ADB5;
+    font-weight: 600;
+    font-family: "Montserrat";
+    padding: 12px 35px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border:none;
+}
+#sendButton::before{
+	position: absolute;
+    content: "";
+    top: 0px;
+    height: 100%;
+    left: -25%;
+    width: 0%;
+    background-color: #222831;
+    transform: skew(50deg);
+    transition-duration: .6s;
+    z-index: 1;
+}
+#sendButton:hover:before{width: 170%;}
+#sendButton span{
+	position: relative;
+	z-index: 2;
+}
+
+
+
+
+
+/* ------------------------------------------------------------------ */
+/* 2026 update - extensions built on the Arlo template styles          */
+/* ------------------------------------------------------------------ */
+
+/* Filter tabs (experience + projects) - same look as the Arlo portfolio filter */
+.aac_filter{
+	width: 100%;
+	float: left;
+	clear: both;
+	list-style-type: none;
+	margin: -30px 0px 40px 0px;
+	text-align: center;
+}
+.aac_filter li{
+	display: inline-block;
+	margin: 0px 18px 10px 18px;
+}
+.aac_filter li a{
+	font-family: "Montserrat";
+	font-size: 14px;
+	font-weight: 600;
+	color: #222831;
+	text-decoration: none;
+	position: relative;
+	padding-bottom: 6px;
+	transition: color .3s ease;
+}
+.aac_filter li a:after{
+	position: absolute;
+	content: "";
+	left: 0px;
+	bottom: 0px;
+	width: 0%;
+	height: 2px;
+	background-color: #00ADB5;
+	transition: width .3s ease;
+}
+.aac_filter li a:hover,
+.aac_filter li a.current{color: #00ADB5;}
+.aac_filter li a.current:after{width: 100%;}
+
+/* Equal-height card rows for services-style and news-style lists */
+.aac_experience .list_wrap > ul,
+.aac_awards .list_wrap > ul,
+.aac_skill_groups .list_wrap > ul,
+.aac_projects > ul.total{
+	display: flex;
+	flex-wrap: wrap;
+}
+.aac_experience .list_wrap > ul > li,
+.aac_awards .list_wrap > ul > li,
+.aac_skill_groups .list_wrap > ul > li,
+.aac_projects > ul.total > li{
+	float: none;
+	display: flex;
+}
+.aac_projects > ul.total > li:last-child{margin-bottom: 30px;}
+.aac_experience .list_wrap ul li .inner,
+.aac_awards .list_wrap ul li .inner,
+.aac_skill_groups .list_wrap ul li .inner,
+.aac_projects .inner_list{
+	float: none;
+	height: auto;
+}
+
+/* Experience cards */
+.arlo_tm_skills_wrap .arlo_tm_services_wrap{
+	background-color: transparent;
+	margin-bottom: 0px;
+}
+.aac_experience .list_wrap ul li .inner{background-color: #fff;}
+.aac_experience .list_wrap ul li .icon{
+	height: 60px;
+	display: flex;
+	align-items: center;
+}
+.aac_experience .list_wrap ul li .icon img{
+	max-height: 60px;
+	max-width: 140px;
+	width: auto;
+}
+.aac_badge{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	border-radius: 3px;
+	color: #fff;
+	font-family: "Montserrat";
+	font-weight: 700;
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+.arlo_tm_services_wrap .list_wrap ul li .title_service h3{line-height: 1.3;}
+.arlo_tm_services_wrap .text p.role{
+	font-style: italic;
+	color: #555;
+	margin-bottom: 15px;
+}
+.aac_experience ul.points{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+.aac_experience ul.points li{
+	float: none;
+	width: 100%;
+	padding: 0px 0px 0px 18px;
+	margin: 0px 0px 8px 0px;
+	position: relative;
+	display: block;
+}
+.aac_experience ul.points li:before{
+	content: "";
+	position: absolute;
+	left: 0px;
+	top: 10px;
+	width: 6px;
+	height: 6px;
+	background-color: #00ADB5;
+	border-radius: 50%;
+}
+.arlo_tm_services_wrap .text a,
+.arlo_tm_about_wrap .definition a{
+	color: #00ADB5;
+	text-decoration: none;
+}
+.arlo_tm_services_wrap .text a:hover,
+.arlo_tm_about_wrap .definition a:hover{text-decoration: underline;}
+.arlo_tm_about_wrap .definition p{margin-bottom: 15px;}
+
+/* Awards */
+.aac_awards .list_wrap ul li .icon i{
+	font-size: 34px;
+	color: #00ADB5;
+}
+
+/* Skill group cards */
+.aac_skill_groups{margin: 10px 0px 50px 0px;}
+.aac_skill_groups .list_wrap ul li .inner{padding: 30px;}
+
+/* Project cards */
+.aac_projects .image_wrap{
+	height: 200px;
+	overflow: hidden;
+	border-radius: 3px 3px 0px 0px;
+}
+.aac_projects .image_wrap img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform .6s ease;
+}
+.aac_projects .inner_list:hover .image_wrap img{transform: scale(1.05);}
+.aac_cover{
+	height: 100%;
+	background-color: #222831;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+.aac_cover i{
+	font-size: 54px;
+	color: #00ADB5;
+	margin-bottom: 18px;
+	transition: transform .4s ease;
+}
+.aac_projects .inner_list:hover .aac_cover i{transform: scale(1.1);}
+.aac_cover span{
+	font-family: "Montserrat";
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #eee;
+}
+.aac_projects .inner_list{
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 0 20px rgba(0,0,0,.06);
+	transition: top .3s ease;
+	top: 0px;
+}
+.aac_projects .inner_list:hover{top: -5px;}
+.aac_projects .definitions_wrap{
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding: 30px 30px 35px 30px;
+}
+.aac_projects .date_wrap p{
+	color: #00ADB5;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+.aac_projects .read_more{margin-top: auto;}
+.arlo_tm_news_wrap .read_more a{margin: 0px 8px 8px 0px;}
+.aac_private{
+	display: inline-block;
+	font-family: "Montserrat";
+	font-weight: 600;
+	font-size: 14px;
+	color: #888;
+	padding: 12px 0px;
+}
+.aac_private i{margin-right: 6px;}
+
+/* CV section */
+.aac_cv{
+	width: 100%;
+	float: left;
+	clear: both;
+	display: flex;
+	gap: 30px;
+	align-items: flex-start;
+}
+.aac_cv_tabs{
+	width: 300px;
+	flex-shrink: 0;
+}
+.aac_cv_tab{
+	display: block;
+	background-color: #fff;
+	padding: 25px 25px 20px 25px;
+	margin-bottom: 20px;
+	border-radius: 3px;
+	border-left: 3px solid transparent;
+	box-shadow: 0 0 20px rgba(0,0,0,.06);
+	text-decoration: none;
+	transition: all .3s ease;
+}
+.aac_cv_tab h3{
+	font-family: "Montserrat";
+	font-size: 18px;
+	font-weight: 600;
+	color: #222831;
+	margin-bottom: 8px;
+}
+.aac_cv_tab p{color: #555; font-size: 14px; line-height: 1.6;}
+.aac_cv_tab:hover{border-left-color: #cfd8dc;}
+.aac_cv_tab.current{border-left-color: #00ADB5;}
+.aac_cv_tab.current h3{color: #00ADB5;}
+.aac_cv_viewer{
+	flex: 1;
+	height: 800px;
+	background-color: #fff;
+	border-radius: 3px;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,.08);
+}
+.aac_cv_viewer iframe{
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	display: block;
+}
+
+/* Responsive */
+@media (max-width: 1040px){
+	.aac_experience .list_wrap > ul > li,
+	.aac_awards .list_wrap > ul > li,
+	.aac_skill_groups .list_wrap > ul > li,
+	.aac_projects > ul.total > li{width: 50%;}
+	.aac_cv{flex-direction: column;}
+	.aac_cv_tabs{width: 100%;}
+	.aac_cv_viewer{width: 100%; flex: none; height: 700px;}
+}
+@media (max-width: 768px){
+	.aac_experience .list_wrap > ul > li,
+	.aac_awards .list_wrap > ul > li,
+	.aac_skill_groups .list_wrap > ul > li,
+	.aac_projects > ul.total > li{width: 100%;}
+	.aac_filter li{margin: 0px 10px 10px 10px;}
+	.aac_cv_viewer{display: none;}
+	.skills_icons{gap: 6%;}
+}

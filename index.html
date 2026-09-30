@@ -1,867 +1,883 @@
 <!DOCTYPE html>
-<!-- Aadil Chasmawala — personal site -->
+<!-- Created and Modified by Aadil Chasmawala for Personal Portfolio-->
 <html lang="en">
+
+<!-- Template from frenify.com/envato/marketify/html/arlo/1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Mar 2019 09:48:54 GMT -->
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="description" content="Aadil Chasmawala - Computer Science at NYU Abu Dhabi. AI engineering, green software research and venture building.">
+<meta name="author" content="Aadil Abbasi Chasmawala">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Aadil Chasmawala</title>
-<meta name="description" content="Aadil Chasmawala — Computer Science at NYU Abu Dhabi. I build AI agents, research green software, and work where technology meets venture." />
-<meta name="author" content="Aadil Chasmawala" />
-<meta property="og:title" content="Aadil Chasmawala" />
-<meta property="og:description" content="CS @ NYU Abu Dhabi · AI agents · Green software research · Venture" />
-<meta property="og:image" content="https://aarz1401.github.io/Aadil-website/img/hero/Aadil_image1.jpeg" />
-<meta property="og:url" content="https://aarz1401.github.io/Aadil-website/" />
-<meta name="theme-color" content="#0a0e13" />
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%232dd4bf'/><stop offset='1' stop-color='%23a78bfa'/></linearGradient></defs><rect width='64' height='64' rx='16' fill='url(%23g)'/><text x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='%2304120f'>AC</text></svg>" />
 
-<script>
-  // Set theme before paint to avoid a flash
-  (function () {
-    var t = null;
-    try { t = localStorage.getItem("theme"); } catch (e) {}
-    if (!t) t = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", t);
-  })();
-</script>
+<!-- STYLES -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
-<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" type="text/css" href="css/plugins.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="custom_style.css" />
+<!-- /STYLES -->
+
 </head>
 
 <body>
-<div class="progress" id="progress"></div>
-<div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
 
-<!-- NAV -->
-<header class="nav" id="nav">
-  <div class="container nav-inner">
-    <a href="#home" class="brand" aria-label="Home">
-      <span class="brand-mark">AC</span>
-      <span class="brand-name">Aadil Chasmawala</span>
-    </a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#cv">CV</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <button class="kbd-btn" id="palette-open" aria-label="Open command menu">
-        <i class="fa-solid fa-magnifying-glass"></i><span class="label">Jump to</span><kbd id="kbd-hint">⌘K</kbd>
-      </button>
-      <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle colour theme">
-        <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>
-      </button>
-      <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-    </div>
-  </div>
-</header>
+<!-- WRAPPER ALL -->
+<div class="arlo_tm_wrapper_all">
 
-<main>
-<!-- HERO -->
-<section class="hero" id="home">
-  <canvas id="hero-canvas" aria-hidden="true"></canvas>
-  <div class="container hero-grid">
-    <div>
-      <div class="status-pill"><span class="pulse"></span>Now: AI &amp; Innovation @ UNDP AltFinLab · Robotics @ REACH Lab</div>
-      <p class="hero-kicker mono">&gt; hello, world. I'm</p>
-      <h1>Aadil<br /><span class="grad">Chasmawala</span></h1>
-      <p class="hero-typed">I build <span class="typed" id="typed"></span><span class="caret"></span></p>
-      <p class="hero-lede">
-        Computer Science student at NYU Abu Dhabi, minoring in Applied Mathematics and Economics.
-        I work at the intersection of AI engineering, green software research and venture building.
-      </p>
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="#cv"><i class="fa-solid fa-file-lines"></i> View my CV</a>
-        <a class="btn btn-ghost" href="#projects"><i class="fa-solid fa-code"></i> See projects</a>
-      </div>
-      <div class="hero-social">
-        <a href="https://github.com/Aarz1401" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/aadil-chasmawala/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="mailto:aac10066@nyu.edu" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://wa.me/971525244180" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://www.instagram.com/aarz1401/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      </div>
-    </div>
-    <div class="portrait-wrap" id="portrait">
-      <div class="portrait-ring"></div>
-      <div class="portrait"><img src="img/hero/Aadil_image1.jpeg" alt="Aadil Chasmawala at the Sheikh Zayed Grand Mosque, Abu Dhabi" /></div>
-      <div class="floating-chip chip-a"><i class="fa-solid fa-robot"></i> AI agents</div>
-      <div class="floating-chip chip-b"><i class="fa-solid fa-leaf"></i> Green AI</div>
-      <div class="floating-chip chip-c"><i class="fa-solid fa-chess-knight"></i> Chess ML</div>
-    </div>
-  </div>
-  <a href="#about" class="scroll-hint" aria-label="Scroll down"><span class="mouse"></span>scroll</a>
-</section>
+	<!-- PRELOADER -->
+	<div class="arlo_tm_preloader">
+		<div class="spinner_wrap">
+			<div class="spinner"></div>
+		</div>
+	</div>
+	<!-- /PRELOADER -->
 
-<!-- STATS -->
-<div class="container">
-  <div class="stats reveal">
-    <div class="stat"><div class="stat-num"><span data-count="3.95" data-decimals="2">0</span></div><div class="stat-label">GPA at NYU Abu Dhabi</div></div>
-    <div class="stat"><div class="stat-num"><span data-count="15">0</span><span class="suffix">+</span></div><div class="stat-label">MCP tools shipped at G42</div></div>
-    <div class="stat"><div class="stat-num"><span data-count="150">0</span><span class="suffix">+</span></div><div class="stat-label">Startups scouted for Toyota</div></div>
-    <div class="stat"><div class="stat-num"><span data-count="500">0</span><span class="suffix">+</span></div><div class="stat-label">Attendees at Slush'D Abu Dhabi</div></div>
-  </div>
+	<!-- MOBILE MENU -->
+	<div class="arlo_tm_mobile_header_wrap">
+		<div class="main_wrap">
+			<div class="logo">
+				<a href="index.html"><img src="img/logo/aac_logo.jpeg" alt="mobile_logo" height="50" width="50"/></a>
+			</div>
+			<div class="arlo_tm_trigger">
+				<div class="hamburger hamburger--collapse-r">
+					<div class="hamburger-box">
+						<div class="hamburger-inner"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="arlo_tm_mobile_menu_wrap">
+			<div class="mob_menu">
+				<ul class="anchor_nav">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#experience">Experience</a></li>
+					<li><a href="#projects">Projects</a></li>
+					<li><a href="#skills">Skills</a></li>
+					<li><a href="#cv">CV</a></li>
+					<li><a href="#contact">Contact Me</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /MOBILE MENU -->
+
+	<!-- CONTENT -->
+	<div class="arlo_tm_content">
+
+		<!-- LEFTPART (navbar) -->
+		<div class="arlo_tm_leftpart_wrap">
+			<div class="leftpart_inner">
+				<div class="logo_wrap">
+					<a href="#"><img src="img/logo/aac_logo.jpeg" alt="desktop-logo" height="100" width="100" /></a>
+				</div>
+				<div class="menu_list_wrap">
+					<ul class="anchor_nav">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#experience">Experience</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#skills">Skills</a></li>
+						<li><a href="#cv">CV</a></li>
+						<li><a href="#contact">Contact me</a></li>
+					</ul>
+				</div>
+				<div class="leftpart_bottom">
+					<div class="social_wrap">
+						<ul>
+							<li><a href="https://github.com/Aarz1401" target="_blank" rel="noopener"><i class="fab fa-github"></i></a></li>
+							<li><a href="https://www.linkedin.com/in/aadil-chasmawala/" target="_blank" rel="noopener"><i class="xcon-linkedin"></i></a></li>
+							<li><a href="mailto:aac10066@nyu.edu"><i class="fas fa-envelope"></i></a></li>
+							<li><a href="https://www.instagram.com/aarz1401/" target="_blank" rel="noopener"><i class="xcon-instagram"></i></a></li>
+							<li><a href="https://wa.me/971525244180" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<a class="arlo_tm_resize" href="#"><i class="xcon-angle-left"></i></a>
+			</div>
+		</div>
+		<!-- /LEFTPART -->
+
+		<!-- RIGHTPART  -->
+		<div class="arlo_tm_rightpart">
+			<div class="rightpart_inner">
+
+				<!-- HOME -->
+				<div class="arlo_tm_section" id="home">
+					<div class="arlo_tm_hero_header_wrap">
+						<div class="arlo_tm_universal_box_wrap">
+							<div class="bg_wrap">
+								<div class="overlay_image hero parallax" data-speed="0.1"></div>
+								<div class="overlay_color hero"></div>
+							</div>
+							<div class="content hero">
+								<div class="inner_content">
+									<div class="image_wrap">
+										<img src="img/hero/Aadil_image1.jpeg" alt="Aadil Chasmawala" />
+									</div>
+									<div class="name_holder">
+										<h3>Aadil <span>Chasmawala</span></h3>
+									</div>
+									<div class="text_typing">
+										<p>I am a <span class="arlo_tm_animation_text_word"></span></p>
+									</div>
+								</div>
+							</div>
+							<div class="arlo_tm_arrow_wrap bounce anchor">
+								<a href="#about"><i class="xcon-angle-double-down"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /HOME -->
+
+				<!-- ABOUT -->
+				<div class="arlo_tm_section relative" id="about">
+					<div class="arlo_tm_about_wrapper_all">
+						<div class="container">
+							<div class="arlo_tm_title_holder">
+								<h3>About Me</h3>
+								<span>Main information about me</span>
+							</div>
+
+							<div class="arlo_tm_about_wrap">
+								<div class="author_wrap">
+									<div class="leftbox">
+										<div class="about_image_wrap parallax" data-relative-input="true">
+											<div class="image layer" data-depth="0.1">
+												<img src="img/Aadil/Aadil.jpeg" alt="Aadil Chasmawala" />
+												<div class="inner" data-img-url="img/Aadil/Aadil.jpeg"></div>
+											</div>
+											<div class="border layer" data-depth="0.2">
+												<img src="img/Aadil/Aadil.jpeg" alt="" />
+												<div class="inner"></div>
+											</div>
+										</div>
+									</div>
+									<div class="rightbox">
+										<div class="arlo_tm_mini_title_holder">
+											<h4>Hi, I'm Aadil Chasmawala</h4>
+										</div>
+										<div class="definition">
+											<p>I'm a Computer Science student at <strong>New York University Abu Dhabi</strong> (Class of 2027), minoring in Applied Mathematics and Economics. I like problems where a working system matters more than a slide deck.</p>
+											<p>This summer at <strong>Inception (G42)</strong> I built Model Context Protocol tools and agent workflows that let LLMs work inside Outlook, Teams, SharePoint and Planner. I'm now on UNDP AltFinLab's Digital, AI &amp; Innovation team, and on the robotics track at NYUAD's REACH Lab.</p>
+											<p>On the research side I study how much energy software and AI actually use, and co-authored a <a href="https://arxiv.org/abs/2506.01774" target="_blank" rel="noopener">research agenda on green AI</a>. I've also worked on the venture side: scouting startups for Toyota at H-Farm in Venice, and interviewing GCC founders at Arrayah in Dubai.</p>
+										</div>
+										<div class="about_short_contact_wrap">
+											<ul>
+												<li><span><label>Study:</label> NYU Abu Dhabi</span></li>
+												<li><span><label>Degree:</label> BS Computer Science</span></li>
+												<li><span><label>Minors:</label> Applied Math, Economics</span></li>
+												<li><span><label>GPA:</label> 3.95 / 4.0</span></li>
+												<li><span><label>Graduation:</label> May 2027</span></li>
+												<li><span><label>City:</label> Abu Dhabi, UAE</span></li>
+												<li><span><label>Study Away:</label> Paris, New York</span></li>
+												<li><span><label>Interests:</label> Chess, Football, Investing</span></li>
+												<li><span><label>Mail:</label> <a href="mailto:aac10066@nyu.edu">aac10066@nyu.edu</a></span></li>
+												<li><span><label>Github:</label> <a href="https://github.com/Aarz1401" target="_blank" rel="noopener">Aarz1401</a></span></li>
+											</ul>
+										</div>
+										<div class="buttons_wrap">
+											<ul>
+												<li class="anchor">
+													<a href="#cv"><span>View CV</span></a>
+												</li>
+												<li class="anchor">
+													<a href="#contact"><span>Send Message</span></a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /ABOUT -->
+
+				<!-- COUNTERBOX -->
+				<div class="arlo_tm_section">
+					<div class="container">
+						<div class="arlo_tm_counter_wrap" data-col="4" data-delay="300">
+							<ul class="arlo_tm_counter_list arlo_tm_miniboxes">
+								<li>
+									<div class="inner arlo_tm_minibox">
+										<h3><span><span class="arlo_tm_counter" data-from="0" data-to="3.95" data-decimals="2" data-speed="2000">0</span></span></h3>
+										<span>GPA at NYU Abu Dhabi</span>
+									</div>
+								</li>
+								<li>
+									<div class="inner arlo_tm_minibox">
+										<h3><span><span class="arlo_tm_counter" data-from="0" data-to="15" data-speed="2000">0</span>+</span></h3>
+										<span>MCP Tools Built at G42</span>
+									</div>
+								</li>
+								<li>
+									<div class="inner arlo_tm_minibox">
+										<h3><span><span class="arlo_tm_counter" data-from="0" data-to="150" data-speed="2000">0</span>+</span></h3>
+										<span>Startups Scouted</span>
+									</div>
+								</li>
+								<li>
+									<div class="inner arlo_tm_minibox">
+										<h3><span><span class="arlo_tm_counter" data-from="0" data-to="500" data-speed="2000">0</span>+</span></h3>
+										<span>Slush'D Attendees</span>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /COUNTERBOX -->
+
+				<!-- EXPERIENCE -->
+				<div class="arlo_tm_section" id="experience">
+					<div class="arlo_tm_skills_wrap">
+						<div class="container">
+							<div class="arlo_tm_title_holder">
+								<h3>Experience</h3>
+								<span>Industry, research and leadership</span>
+							</div>
+							<ul class="aac_filter" data-target="#experience_list">
+								<li><a href="#" class="current" data-filter="all">All</a></li>
+								<li><a href="#" data-filter="industry">Industry</a></li>
+								<li><a href="#" data-filter="research">Research</a></li>
+								<li><a href="#" data-filter="leadership">Leadership &amp; Teaching</a></li>
+							</ul>
+							<div class="arlo_tm_services_wrap aac_experience">
+								<div class="list_wrap">
+									<ul id="experience_list">
+										<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="industry">
+											<div class="inner">
+												<div class="icon"><span class="aac_badge" style="background-color:#0468b1">UN</span></div>
+												<div class="title_service"><h3>UNDP - AltFinLab</h3></div>
+												<div class="text">
+													<p class="role">Intern, Digital, AI &amp; Innovation Team (part-time)<br>Sep 2026 - Present<br>Remote</p>
+													<ul class="points">
+														<li>Building reproducible AI tools and automations for hand-over to non-technical staff.</li>
+														<li>Selected via a final-stage assessment: a pilot proposal pitching a no-code app builder to <strong>20 food-security CSOs</strong> across the Arab States and Africa.</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="industry">
+											<div class="inner">
+												<div class="icon"><span class="aac_badge" style="background-color:#222831">G42</span></div>
+												<div class="title_service"><h3>Inception (G42)</h3></div>
+												<div class="text">
+													<p class="role">Data Engineer Intern<br>Jun - Aug 2026<br>Abu Dhabi, UAE</p>
+													<ul class="points">
+														<li>Developed <strong>15+ MCP tools</strong> on Microsoft Graph APIs (Outlook, Teams, SharePoint, Planner) so LLM agents can retrieve enterprise data and run multi-step workflows.</li>
+														<li>Built and tested <strong>8 agentic AI workflows</strong> (meeting prep, email triage, task prioritization), plus Copilot Studio agents for sprint planning and HR scheduling.</li>
+														<li>Evaluated Arize Phoenix, RAGAS and DeepEval; contributed to a self-hosted observability pipeline (OpenTelemetry, Grafana Alloy, PostgreSQL, Kubernetes).</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="industry">
+											<div class="inner">
+												<div class="icon"><img class="png" src="img/Aadil/H-Farm-logo.png" alt="H-Farm logo" /></div>
+												<div class="title_service"><h3>H-Farm Open Innovation</h3></div>
+												<div class="text">
+													<p class="role">Innovation Analyst Intern<br>Jun - Aug 2025<br>Venice, Italy</p>
+													<ul class="points">
+														<li>Scouted <strong>150+ startups</strong> and shortlisted <strong>50 for Toyota</strong> in Southeast Asia across mobility, data partnerships and ESG.</li>
+														<li>Built a 100+ company database of blockchain ventures for Exponential Science.</li>
+														<li>Automated scouting with <strong>n8n AI agents</strong>, cutting manual screening time by ~30%.</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="industry">
+											<div class="inner">
+												<div class="icon"><img class="png" src="img/Aadil/arrayah-logo.png" alt="Arrayah logo" /></div>
+												<div class="title_service"><h3>Arrayah Venture Studio</h3></div>
+												<div class="text">
+													<p class="role">Deep-Tech Intern / Founder's Associate<br>Jun - Aug 2024<br>Dubai, UAE</p>
+													<ul class="points">
+														<li>Interviewed <strong>20+ GCC founders</strong> and mapped early-stage funding gaps; secured <strong>15 mentors in 4 weeks</strong>.</li>
+														<li>Helped steer Arrayah's partnership with a regional angel network.</li>
+														<li>Designed the pricing model and prototype for an energy-efficient code refactoring service.</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="research">
+											<div class="inner">
+												<div class="icon"><img class="png" src="img/Aadil/nyu-logo.png" alt="NYU logo" /></div>
+												<div class="title_service"><h3>Green AI Research</h3></div>
+												<div class="text">
+													<p class="role">Research Collaborator, with Prof. Jo&atilde;o Paulo Fernandes<br>Dec 2024 - May 2026<br>NYU Abu Dhabi</p>
+													<ul class="points">
+														<li>Co-authored <a href="https://arxiv.org/abs/2506.01774" target="_blank" rel="noopener">Greening AI-enabled Systems with Software Engineering</a>; attended the week-long workshop in Lausanne.</li>
+														<li>Related work at <a href="https://greensworkshop.github.io" target="_blank" rel="noopener">GREENS'26</a> (ICSE 2026 workshop).</li>
+														<li>Studied energy use across LLM-generated programs; explored evaluating AI coding agents (LangChain, SWE-bench).</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="research">
+											<div class="inner">
+												<div class="icon"><img class="png" src="img/Aadil/nyu-logo.png" alt="NYU logo" /></div>
+												<div class="title_service"><h3>REACH Lab, NYUAD</h3></div>
+												<div class="text">
+													<p class="role">Student Research Assistant, Robotics<br>Sep 2026 - Present<br>Abu Dhabi, UAE</p>
+													<ul class="points">
+														<li>LLM and system-integration track on a robotics project with <strong>KINESIS</strong> and <strong>AD Ports</strong>.</li>
+														<li>Supporting competition operations and ramping up on the robot stack and ROS.</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="leadership">
+											<div class="inner">
+												<div class="icon"><img class="png" src="img/Aadil/VV-logo.png" alt="Violet Ventures logo" /></div>
+												<div class="title_service"><h3>Violet Ventures, NYUAD</h3></div>
+												<div class="text">
+													<p class="role">Student Venture Associate &amp; Co-Lead<br>Sep 2023 - Present<br>Abu Dhabi, UAE</p>
+													<ul class="points">
+														<li>Screen <strong>15 student-led startups</strong> each term for startAD (market sizing, comps).</li>
+														<li>Co-organized <strong>Slush'D Abu Dhabi 2024</strong>: 500+ attendees and 33 guest speakers.</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="leadership">
+											<div class="inner">
+												<div class="icon"><img class="png" src="img/Aadil/hackAD-logo.png" alt="HackAD logo" /></div>
+												<div class="title_service"><h3>HackAD, NYUAD</h3></div>
+												<div class="text">
+													<p class="role">Vice President &amp; Events Manager<br>Jan 2023 - Dec 2024<br>Abu Dhabi, UAE</p>
+													<ul class="points">
+														<li>Organized <strong>7+ technical events</strong>, including a 100+ participant hackathon and "ML for All" workshops.</li>
+														<li>Also: student assistant at MARSS 2024 (200+ academics) and Founder's Associate of The Consulting Collective.</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="leadership">
+											<div class="inner">
+												<div class="icon"><img class="png" src="img/Aadil/nyu-logo.png" alt="NYU logo" /></div>
+												<div class="title_service"><h3>Teaching, NYUAD</h3></div>
+												<div class="text">
+													<p class="role">CS Peer Tutor &amp; Teaching Assistant<br>Aug 2024 - Present<br>Abu Dhabi, UAE</p>
+													<ul class="points">
+														<li><strong>CS Peer Tutor</strong>, Academic Resource Center (Sep 2026 - Present).</li>
+														<li><strong>Teaching Assistant</strong>, Computer Programming for Engineers: C++ recitations for 20+ students (Fall 2024).</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /EXPERIENCE -->
+
+				<!-- PROJECTS -->
+				<div class="arlo_tm_section" id="projects">
+					<div class="arlo_tm_news_wrap">
+						<div class="container">
+							<div class="arlo_tm_title_holder news">
+								<h3>Projects</h3>
+								<span>Check out my projects</span>
+							</div>
+							<ul class="aac_filter" data-target="#project_list">
+								<li><a href="#" class="current" data-filter="all">All</a></li>
+								<li><a href="#" data-filter="ai">AI &amp; ML</a></li>
+								<li><a href="#" data-filter="research">Research</a></li>
+								<li><a href="#" data-filter="systems">Systems</a></li>
+								<li><a href="#" data-filter="creative">Creative &amp; Hardware</a></li>
+							</ul>
+							<div class="arlo_tm_list_wrap aac_projects">
+								<ul class="total" id="project_list">
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="ai systems">
+										<div class="inner_list">
+											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-code-branch"></i><span>TypeScript &middot; Code-OSS</span></div></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2026 &middot; IDE Tooling</p></div>
+												<div class="title_holder"><h3>CodeTrail</h3></div>
+												<div class="definition"><p>An IDE that tracks code provenance: a Google-Docs-style history of how much of every file was typed, pasted, or generated by AI. Gives instructors evidence of AI use instead of guesswork.</p></div>
+												<div class="read_more"><span class="aac_private"><i class="fas fa-lock"></i> Private Repo</span></div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="ai research">
+										<div class="inner_list">
+											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-chess-knight"></i><span>PyTorch &middot; CNN + Transformer</span></div></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2026 &middot; Deep Learning</p></div>
+												<div class="title_holder"><h3>Chess Style Fingerprint</h3></div>
+												<div class="definition"><p>Learns a style embedding for chess games from board tensors, with no player names or engine scores. Reaches 76% top-1 retrieval on held-out Tal vs Carlsen games.</p></div>
+												<div class="read_more"><span class="aac_private"><i class="fas fa-lock"></i> Private Repo</span></div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="ai">
+										<div class="inner_list">
+											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-couch"></i><span>Swift &middot; ARKit &middot; Kotlin</span></div></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2026 &middot; AR / Mobile</p></div>
+												<div class="title_holder"><h3>RoomWise</h3></div>
+												<div class="definition"><p>Scan a room with a LiDAR iPhone, place a true-to-scale chair in AR, and check it fits against detected walls and furniture. Includes a desktop app with an AI shopping agent.</p></div>
+												<div class="read_more"><span class="aac_private"><i class="fas fa-lock"></i> Private Repo</span></div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="research">
+										<div class="inner_list">
+											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-leaf"></i><span>Python &middot; C++ &middot; pyRAPL</span></div></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2025 &middot; Green Software</p></div>
+												<div class="title_holder"><h3>Green Transpilation</h3></div>
+												<div class="definition"><p>How much energy does rewriting Python in C++ save? Translates verified LeetCode-hard solutions with GPT-5, re-verifies them, and measures energy use with pyRAPL.</p></div>
+												<div class="read_more"><a href="https://github.com/Aarz1401/Aarz_GreenTranspilation" target="_blank" rel="noopener"><span>Github</span></a></div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="research ai">
+										<div class="inner_list">
+											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-book-reader"></i><span>SPECTER2 &middot; HPC</span></div></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2026 &middot; Capstone Research</p></div>
+												<div class="title_holder"><h3>Title Specificity</h3></div>
+												<div class="definition"><p>Measures how specific a paper's title is relative to its abstract using SPECTER2 embeddings, and tests how that relates to citation impact. Runs on NYUAD's Jubail HPC.</p></div>
+												<div class="read_more"><span class="aac_private"><i class="fas fa-lock"></i> Private Repo</span></div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="systems">
+										<div class="inner_list">
+											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-terminal"></i><span>C &middot; POSIX &middot; Sockets</span></div></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2026 &middot; Operating Systems</p></div>
+												<div class="title_holder"><h3>Remote Shell + Scheduler</h3></div>
+												<div class="definition"><p>A Unix shell in C with pipes and redirection, extended into a multithreaded TCP server with a Round Robin + Shortest-Remaining-Job-First scheduler.</p></div>
+												<div class="read_more"><span class="aac_private"><i class="fas fa-lock"></i> Private Repo</span></div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="systems">
+										<div class="inner_list">
+											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-network-wired"></i><span>Python &middot; Sockets</span></div></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2025 &middot; Computer Networks</p></div>
+												<div class="title_holder"><h3>Chunked File Transfer</h3></div>
+												<div class="definition"><p>Team networks project that splits a file into chunks, moves them between networked processes and reassembles it at the receiver.</p></div>
+												<div class="read_more"><a href="https://github.com/Aarz1401/CN_Project1_aala" target="_blank" rel="noopener"><span>Github</span></a></div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="systems">
+										<div class="inner_list">
+											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-balance-scale"></i><span>C++ &middot; Game Theory</span></div></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2023 &middot; Simulation</p></div>
+												<div class="title_holder"><h3>Iterated Prisoner's Dilemma</h3></div>
+												<div class="definition"><p>A C++ simulator that pits four strategies (Random, Tit for Tat, always-defect and always-cooperate) against each other over repeated rounds.</p></div>
+												<div class="read_more"><a href="https://github.com/Aarz1401/Iterated-Prisoner-s-Dilemma" target="_blank" rel="noopener"><span>Github</span></a></div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="creative">
+										<div class="inner_list">
+											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-robot"></i><span>Arduino &middot; p5.js</span></div></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2024 &middot; Robotics</p></div>
+												<div class="title_holder"><h3>Interactive Mr. Octopus</h3></div>
+												<div class="definition"><p>A wireless, sensor-driven robot pet with emotional states. A p5.js twin on the laptop mirrors its mood with sound.</p></div>
+												<div class="read_more">
+													<a href="https://github.com/Aarz1401/Mr-Octopus---A-Robot-with-emotions" target="_blank" rel="noopener"><span>Github</span></a>
+													<a href="https://intro.nyuadim.com/2024/05/11/final-project-interactive-mr-octopus/" target="_blank" rel="noopener"><span>Write-up</span></a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="creative">
+										<div class="inner_list">
+											<div class="image_wrap"><img src="img/projects/VR-simulation.jpg" alt="Atlantis VR simulation" loading="lazy"></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2024 &middot; Unity VR</p></div>
+												<div class="title_holder"><h3>Underwater Interactive VR Simulation</h3></div>
+												<div class="definition"><p>Unity VR simulation of the underwater city of Atlantis.</p></div>
+												<div class="read_more"><a href="https://github.com/Aarz1401/Atlantis_VR_simul" target="_blank" rel="noopener"><span>Github</span></a></div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="creative">
+										<div class="inner_list">
+											<div class="image_wrap"><img src="img/projects/HTSADWP_film.jpg" alt="How To Survive a Day Without a Phone" loading="lazy"></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2024 &middot; Interactive Film</p></div>
+												<div class="title_holder"><h3>How To Survive a Day Without a Phone</h3></div>
+												<div class="definition"><p>Short interactive film presented through a custom website.</p></div>
+												<div class="read_more">
+													<a href="https://github.com/Aarz1401/How-To-Survive-a-Day-without-a-Phone--CL-4" target="_blank" rel="noopener"><span>Github</span></a>
+													<a href="https://aarz1401.github.io/How-To-Survive-a-Day-without-a-Phone--CL-4/index.html" target="_blank" rel="noopener"><span>Website</span></a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="creative">
+										<div class="inner_list">
+											<div class="image_wrap"><img src="img/projects/comic-strip.jpg" alt="11th Hour Heroics comic" loading="lazy"></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2024 &middot; Interactive Comic</p></div>
+												<div class="title_holder"><h3>11th Hour Heroics</h3></div>
+												<div class="definition"><p>Comedic comic strip with interactive choices and audio.</p></div>
+												<div class="read_more">
+													<a href="https://github.com/Aarz1401/11th_Hour_Heroic" target="_blank" rel="noopener"><span>Github</span></a>
+													<a href="https://aarz1401.github.io/11th_Hour_Heroic/index.html" target="_blank" rel="noopener"><span>Website</span></a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="creative">
+										<div class="inner_list">
+											<div class="image_wrap"><img src="img/projects/Audio-project.jpg" alt="Flow of Life audioscape" loading="lazy"></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2024 &middot; Audioscape</p></div>
+												<div class="title_holder"><h3>Flow of Life - Audioscape of Water</h3></div>
+												<div class="definition"><p>A story of how water gives life, and how life is reflected in water.</p></div>
+												<div class="read_more">
+													<a href="https://github.com/Aarz1401/Journey_of_Water_Cl3" target="_blank" rel="noopener"><span>Github</span></a>
+													<a href="https://aarz1401.github.io/Journey_of_Water_Cl3/index.html" target="_blank" rel="noopener"><span>Website</span></a>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="creative">
+										<div class="inner_list">
+											<div class="image_wrap"><img src="img/projects/30MFF.jpg" alt="Little Things that Make us Happy" loading="lazy"></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2024 &middot; Short Film</p></div>
+												<div class="title_holder"><h3>30 MFF - Little Things that Make us Happy</h3></div>
+												<div class="definition"><p>Short film on the little things that make us happy.</p></div>
+												<div class="read_more">
+													<a href="https://github.com/Aarz1401/Little-Things-that-make-us-happy-website" target="_blank" rel="noopener"><span>Github</span></a>
+													<a href="https://aarz1401.github.io/Little-Things-that-make-us-happy-website/" target="_blank" rel="noopener"><span>Website</span></a>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /PROJECTS -->
+
+				<!-- SKILLS -->
+				<div class="arlo_tm_section" id="skills">
+					<div class="arlo_tm_about_wrap">
+						<div class="container">
+							<div class="arlo_tm_title_holder">
+								<h3>Skills</h3>
+								<span>Here are key skills</span>
+							</div>
+							<div class="arlo_tm_mini_title_holder" style="text-align: center; margin-bottom: 50px;">
+								<h2><span style="visibility:hidden">a</span><span class="arlo_tm_animation_text_word2"></span></h2>
+							</div>
+
+							<div class="skills_icons">
+								<div class="icon-container" data-name="Python"><i class="devicon-python-plain"></i></div>
+								<div class="icon-container" data-name="C++"><i class="devicon-cplusplus-plain"></i></div>
+								<div class="icon-container" data-name="C"><i class="devicon-c-plain"></i></div>
+								<div class="icon-container" data-name="Java"><i class="devicon-java-plain"></i></div>
+								<div class="icon-container" data-name="JavaScript"><i class="devicon-javascript-plain"></i></div>
+							</div>
+							<div class="skills_icons">
+								<div class="icon-container" data-name="TypeScript"><i class="devicon-typescript-plain"></i></div>
+								<div class="icon-container" data-name="Swift"><i class="devicon-swift-plain"></i></div>
+								<div class="icon-container" data-name="Kotlin"><i class="devicon-kotlin-plain"></i></div>
+								<div class="icon-container" data-name="PostgreSQL"><i class="devicon-postgresql-plain"></i></div>
+								<div class="icon-container" data-name="MongoDB"><i class="devicon-mongodb-plain"></i></div>
+							</div>
+							<div class="skills_icons">
+								<div class="icon-container" data-name="PyTorch"><i class="devicon-pytorch-original"></i></div>
+								<div class="icon-container" data-name="TensorFlow"><i class="devicon-tensorflow-original"></i></div>
+								<div class="icon-container" data-name="NumPy"><i class="devicon-numpy-plain"></i></div>
+								<div class="icon-container" data-name="Pandas"><i class="devicon-pandas-plain"></i></div>
+								<div class="icon-container" data-name="Matplotlib"><i class="devicon-matplotlib-plain"></i></div>
+							</div>
+							<div class="skills_icons">
+								<div class="icon-container" data-name="Docker"><i class="devicon-docker-plain"></i></div>
+								<div class="icon-container" data-name="Kubernetes"><i class="devicon-kubernetes-plain"></i></div>
+								<div class="icon-container" data-name="Linux"><i class="devicon-linux-plain"></i></div>
+								<div class="icon-container" data-name="Git"><i class="devicon-git-plain"></i></div>
+								<div class="icon-container" data-name="Azure DevOps"><i class="devicon-azuredevops-plain"></i></div>
+							</div>
+							<div class="skills_icons">
+								<div class="icon-container" data-name="Node.js"><i class="devicon-nodejs-plain"></i></div>
+								<div class="icon-container" data-name="Unity"><i class="devicon-unity-plain"></i></div>
+								<div class="icon-container" data-name="Arduino"><i class="devicon-arduino-plain"></i></div>
+								<div class="icon-container" data-name="p5.js"><i class="devicon-p5js-original"></i></div>
+								<div class="icon-container" data-name="Figma"><i class="devicon-figma-plain"></i></div>
+							</div>
+
+							<div class="arlo_tm_services_wrap aac_skill_groups">
+								<div class="list_wrap">
+									<ul>
+										<li>
+											<div class="inner">
+												<div class="title_service"><h3>AI &amp; Agents</h3></div>
+												<div class="text"><p>LLM Agents, Model Context Protocol (MCP), LangChain, Microsoft Graph API, Copilot Studio, n8n</p></div>
+											</div>
+										</li>
+										<li>
+											<div class="inner">
+												<div class="title_service"><h3>Evaluation &amp; Observability</h3></div>
+												<div class="text"><p>Arize Phoenix, RAGAS, DeepEval, OpenTelemetry, Grafana Alloy</p></div>
+											</div>
+										</li>
+										<li>
+											<div class="inner">
+												<div class="title_service"><h3>Finance &amp; Analytics</h3></div>
+												<div class="text"><p>Trading Comps, Scenario Modelling, Market Sizing, Excel, SQL, Bloomberg (basic)</p></div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="progress_bar_wrap_total">
+								<div class="arlo_tm_progress_wrap" data-size="small" data-round="c" data-strip="off">
+									<div class="arlo_tm_progress" data-value="95" data-color="#000">
+										<span><span class="label">Python</span><span class="number">95%</span></span>
+										<div class="arlo_tm_bar_bg"><div class="arlo_tm_bar_wrap"><div class="arlo_tm_bar"></div></div></div>
+									</div>
+									<div class="arlo_tm_progress" data-value="85" data-color="#000">
+										<span><span class="label">C / C++</span><span class="number">85%</span></span>
+										<div class="arlo_tm_bar_bg"><div class="arlo_tm_bar_wrap"><div class="arlo_tm_bar"></div></div></div>
+									</div>
+									<div class="arlo_tm_progress" data-value="80" data-color="#000">
+										<span><span class="label">JavaScript / TypeScript</span><span class="number">80%</span></span>
+										<div class="arlo_tm_bar_bg"><div class="arlo_tm_bar_wrap"><div class="arlo_tm_bar"></div></div></div>
+									</div>
+									<div class="arlo_tm_progress" data-value="75" data-color="#000">
+										<span><span class="label">SQL</span><span class="number">75%</span></span>
+										<div class="arlo_tm_bar_bg"><div class="arlo_tm_bar_wrap"><div class="arlo_tm_bar"></div></div></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /SKILLS -->
+
+				<!-- AWARDS -->
+				<div class="arlo_tm_section" id="awards">
+					<div class="container">
+						<div class="arlo_tm_title_holder">
+							<h3>Awards</h3>
+							<span>Bootcamps, awards and publications</span>
+						</div>
+						<div class="arlo_tm_services_wrap aac_awards">
+							<div class="list_wrap">
+								<ul>
+									<li class="wow fadeInUp" data-wow-duration="1.2s">
+										<div class="inner">
+											<div class="icon"><i class="fas fa-trophy"></i></div>
+											<div class="title_service"><h3>1st Prize - CogniCare</h3></div>
+											<div class="text"><p class="role">Startup Center Bootcamp, Jul 2025</p><p>An AI voice-assistant wearable for Alzheimer's and dementia care, pitched to 4+ investors.</p></div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s">
+										<div class="inner">
+											<div class="icon"><i class="fas fa-seedling"></i></div>
+											<div class="title_service"><h3>ESG Reporting Platform</h3></div>
+											<div class="text"><p class="role">LUMINA Bootcamp, Jul 2025</p><p>Prototyped an ESG-reporting consulting platform and assessed its market viability.</p></div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s">
+										<div class="inner">
+											<div class="icon"><i class="fas fa-scroll"></i></div>
+											<div class="title_service"><h3>Green AI Paper</h3></div>
+											<div class="text"><p class="role">arXiv 2506.01774, 2025</p><p>Co-authored <a href="https://arxiv.org/abs/2506.01774" target="_blank" rel="noopener">Greening AI-enabled Systems with Software Engineering</a>, a research agenda for sustainable AI.</p></div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /AWARDS -->
+
+				<!-- CV -->
+				<div class="arlo_tm_section" id="cv">
+					<div class="arlo_tm_news_wrap">
+						<div class="container">
+							<div class="arlo_tm_title_holder">
+								<h3>Curriculum Vitae</h3>
+								<span>Technical and business versions</span>
+							</div>
+							<div class="aac_cv">
+								<div class="aac_cv_tabs">
+									<a href="#" class="aac_cv_tab current" data-cv="CV/Aadil_Chasmawala_CV_Technical.pdf">
+										<h3>Technical CV</h3>
+										<p>MCP tooling, agent evaluation, research and systems projects.</p>
+									</a>
+									<a href="#" class="aac_cv_tab" data-cv="CV/Aadil_Chasmawala_CV_Business.pdf">
+										<h3>Business CV</h3>
+										<p>Venture scouting, founder research, markets and leadership.</p>
+									</a>
+									<div class="read_more">
+										<a id="cv_download" href="CV/Aadil_Chasmawala_CV_Technical.pdf" download><span>Download</span></a>
+										<a id="cv_open" href="CV/Aadil_Chasmawala_CV_Technical.pdf" target="_blank" rel="noopener"><span>Open</span></a>
+									</div>
+								</div>
+								<div class="aac_cv_viewer">
+									<iframe id="cv_frame" data-src="CV/Aadil_Chasmawala_CV_Technical.pdf#view=FitH" title="Aadil Chasmawala CV"></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /CV -->
+
+				<!-- CONTACT & FOOTER -->
+				<div class="arlo_tm_section" id="contact">
+					<div class="container">
+						<div class="arlo_tm_title_holder contact">
+							<h3>Contact Me</h3>
+							<span>Get in touch with me</span>
+						</div>
+					</div>
+					<div class="arlo_tm_footer_contact_wrapper_all">
+						<div class="arlo_tm_contact_wrap_all">
+							<div class="container">
+								<div class="leftbox">
+									<div class="arlo_tm_mini_title_holder contact">
+										<h4>Get in Touch</h4>
+									</div>
+									<div class="short_info_wrap">
+										<ul>
+											<li><p><label>Address:</label><span>Abu Dhabi, UAE</span></p></li>
+											<li><p><label>Email:</label><span><a href="mailto:aac10066@nyu.edu">aac10066@nyu.edu</a></span></p></li>
+											<li><p><label>Phone:</label><span><a href="https://wa.me/971525244180">+971 52 524 4180</a></span></p></li>
+											<li><p><label>LinkedIn:</label><span><a href="https://www.linkedin.com/in/aadil-chasmawala/" target="_blank" rel="noopener">aadil-chasmawala</a></span></p></li>
+										</ul>
+									</div>
+								</div>
+								<div class="rightbox">
+									<div class="arlo_tm_contact_wrap">
+										<div class="main_input_wrap">
+											<form method="post" class="contact_form" id="contact_form">
+												<div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
+												<div class="empty_notice"><span>Please Fill Required Fields</span></div>
+												<div class="wrap formGroup">
+													<label for="nameID" class="text">Your Name</label>
+													<input id="nameID" type="text" name="from_name" placeholder="Your Name" class="text" required="">
+												</div>
+												<div class="wrap formGroup">
+													<label for="email" class="text">Email</label>
+													<input id="email" type="email" name="email" placeholder="Your Email" class="text" required="">
+												</div>
+												<div class="wrap formGroup">
+													<label for="message" class="text">Message</label>
+													<textarea id="message" name="message" placeholder="Your Message" class="text" rows="4" required=""></textarea>
+												</div>
+												<div class="arlo_tm_button submit">
+													<button type="submit" id="sendButton"><span>Send</span></button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="arlo_tm_footer_wrap">
+							<div class="container" style="text-align:center">
+								<p>&copy; Aadil Chasmawala, <span id="year">2026</span></p>
+							</div>
+							<div class="social_wrap">
+								<ul>
+									<li><a href="https://github.com/Aarz1401" target="_blank" rel="noopener"><i class="fab fa-github"></i></a></li>
+									<li><a href="https://www.linkedin.com/in/aadil-chasmawala/" target="_blank" rel="noopener"><i class="xcon-linkedin"></i></a></li>
+									<li><a href="mailto:aac10066@nyu.edu"><i class="fas fa-envelope"></i></a></li>
+									<li><a href="https://www.instagram.com/aarz1401/" target="_blank" rel="noopener"><i class="xcon-instagram"></i></a></li>
+									<li><a href="https://wa.me/971525244180" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /CONTACT & FOOTER -->
+
+			</div>
+		</div>
+		<!-- /RIGHTPART -->
+
+		<a class="arlo_tm_totop" href="#"></a>
+
+	</div>
 </div>
+<!-- / WRAPPER ALL -->
 
-<!-- ABOUT -->
-<section class="section" id="about">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">01 · about</div>
-      <h2 class="section-title">Engineer by training,<br />builder by instinct.</h2>
-    </div>
-    <div class="about-grid">
-      <div class="card about-text reveal">
-        <p>
-          I'm <strong>Aadil</strong>, a Computer Science student at <strong>NYU Abu Dhabi</strong> (Class of 2027),
-          with minors in Applied Mathematics and Economics. I like problems where a working system matters more than a slide deck.
-        </p>
-        <p>
-          This summer at <strong>Inception (G42)</strong> I built Model Context Protocol tools and agent workflows that let LLMs
-          work inside Outlook, Teams, SharePoint and Planner. Now I'm on UNDP AltFinLab's Digital, AI &amp; Innovation team,
-          building AI tools that non-technical staff can own, and on the robotics track at NYUAD's REACH Lab.
-        </p>
-        <p>
-          On the research side, I study <strong>how much energy software and AI actually use</strong>. I co-authored a
-          <a href="https://arxiv.org/abs/2506.01774" target="_blank" rel="noopener" style="color:var(--accent)">research agenda on green AI</a>
-          and benchmark Python against C++ translations on LeetCode-hard problems.
-        </p>
-        <p>
-          I've also spent time on the venture side: scouting startups for Toyota at H-Farm in Venice, interviewing GCC founders at
-          Arrayah in Dubai, and screening student startups for startAD with Violet Ventures. Off the keyboard: chess, football, and
-          emerging-markets investing.
-        </p>
-        <div class="places">
-          <span class="place">📍 <b>Abu Dhabi</b> home base</span>
-          <span class="place">🇫🇷 <b>Paris</b> Spring '25</span>
-          <span class="place">🇮🇹 <b>Venice</b> Summer '25</span>
-          <span class="place">🇺🇸 <b>New York</b> Fall '25</span>
-          <span class="place">🇨🇭 <b>Lausanne</b> workshop</span>
-          <span class="place">🇦🇪 <b>Dubai</b> Summer '24</span>
-        </div>
-      </div>
-      <div class="card edu-card reveal">
-        <div class="edu-head">
-          <div class="edu-logo"><img src="img/Aadil/nyu-logo.png" alt="NYU logo" /></div>
-          <div>
-            <h3>New York University Abu Dhabi</h3>
-            <p>B.S. Computer Science · Expected May 2027</p>
-          </div>
-        </div>
-        <div class="gpa"><strong>3.95</strong><span>/ 4.0 GPA</span></div>
-        <ul class="facts">
-          <li><i class="fa-solid fa-square-root-variable"></i><span>Minors in Applied Mathematics &amp; Economics</span></li>
-          <li><i class="fa-solid fa-book-open"></i><span>Algorithms, Operating Systems, Computer Networks, Machine Learning, Probability &amp; Statistics, High-Tech Entrepreneurship (NYU Stern)</span></li>
-          <li><i class="fa-solid fa-earth-europe"></i><span>Study away at NYU Paris (Spring 2025) and NYU Stern, New York (Fall 2025)</span></li>
-          <li><i class="fa-solid fa-language"></i><span>English, Hindi, Gujarati, Urdu · basic Arabic</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- SCRIPTS -->
+<script src="js/jquery.js"></script>
+<script src="js/plugins.js"></script>
+<script src="init.js"></script>
+<!-- /SCRIPTS -->
 
-<!-- EXPERIENCE -->
-<section class="section" id="experience">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">02 · experience</div>
-      <h2 class="section-title">Where I've worked</h2>
-      <p class="section-sub">Industry, research and campus leadership. Filter by track.</p>
-    </div>
-    <div class="filters reveal" data-filter-group="exp">
-      <button class="filter active" data-filter="all">All</button>
-      <button class="filter" data-filter="industry">Industry</button>
-      <button class="filter" data-filter="research">Research</button>
-      <button class="filter" data-filter="leadership">Leadership &amp; Teaching</button>
-    </div>
+<!-- Custom scripts-->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+	(function sendEmail() {
+		emailjs.init("tlU9kO8tl_vQFrqKn"); //establishes link to my email
+	})();
+</script>
+<script>
+	jQuery(document).ready(function(){
+		jQuery('#year').text(new Date().getFullYear());
 
-    <div class="timeline" id="timeline">
-      <article class="t-item current reveal" data-cat="industry">
-        <span class="t-dot"></span>
-        <div class="t-card">
-          <div class="t-top">
-            <div class="t-logo mono-logo" style="background:#0468b1">UN</div>
-            <div class="t-meta">
-              <div class="t-row">
-                <div>
-                  <h3 class="t-role">Intern, Digital, AI &amp; Innovation Team<span class="badge-now">now</span></h3>
-                  <div class="t-org">UNDP · AltFinLab (part-time)</div>
-                </div>
-                <div><div class="t-when">Sep 2026 - Present</div><div class="t-where">Remote</div></div>
-              </div>
-            </div>
-          </div>
-          <ul class="t-bullets">
-            <li>Building reproducible AI tools and automations designed to be handed over to non-technical staff.</li>
-            <li>Selected through a final-stage assessment: a pilot proposal pitching a no-code app builder to <b>20 food-security CSOs</b> across the Arab States and Africa.</li>
-          </ul>
-          <div class="tags"><span class="tag">AI automation</span><span class="tag">Microsoft 365</span><span class="tag">Python</span><span class="tag">No-code</span></div>
-        </div>
-      </article>
+		// Load the CV PDF after the page so it never holds up the preloader
+		function loadCv(){
+			var frame = jQuery('#cv_frame');
+			if(!frame.attr('src')){ frame.attr('src', frame.data('src')); }
+		}
+		if(document.readyState === 'complete'){ loadCv(); } else { jQuery(window).on('load', loadCv); }
+		setTimeout(function(){ jQuery('.arlo_tm_preloader').addClass('loaded'); loadCv(); }, 3000);
 
-      <article class="t-item reveal" data-cat="industry">
-        <span class="t-dot"></span>
-        <div class="t-card">
-          <div class="t-top">
-            <div class="t-logo mono-logo" style="background:linear-gradient(135deg,#111827,#374151)">G42</div>
-            <div class="t-meta">
-              <div class="t-row">
-                <div>
-                  <h3 class="t-role">Data Engineer Intern</h3>
-                  <div class="t-org">Inception (G42)</div>
-                </div>
-                <div><div class="t-when">Jun 2026 - Aug 2026</div><div class="t-where">Abu Dhabi, UAE</div></div>
-              </div>
-            </div>
-          </div>
-          <ul class="t-bullets">
-            <li>Developed <b>15+ Model Context Protocol (MCP) tools</b> on Microsoft Graph APIs across Outlook, Teams, SharePoint and Planner, so LLM agents can retrieve enterprise data and run multi-step workflows.</li>
-            <li>Built and tested <b>8 agentic AI workflows</b> (meeting prep, email triage, task prioritization, enterprise retrieval), plus Copilot Studio agents for sprint planning and HR scheduling.</li>
-            <li>Evaluated <b>Arize Phoenix, RAGAS and DeepEval</b> and contributed to a self-hosted observability pipeline for agent tracing and evaluation.</li>
-          </ul>
-          <div class="tags"><span class="tag">MCP</span><span class="tag">Microsoft Graph</span><span class="tag">Copilot Studio</span><span class="tag">OpenTelemetry</span><span class="tag">Grafana Alloy</span><span class="tag">PostgreSQL</span><span class="tag">Kubernetes</span></div>
-        </div>
-      </article>
+		// Filter tabs for experience and projects
+		jQuery('.aac_filter').each(function(){
+			var filter = jQuery(this);
+			var items  = jQuery(filter.data('target')).children('li');
+			filter.find('a').on('click', function(){
+				var f = jQuery(this).data('filter');
+				filter.find('a').removeClass('current');
+				jQuery(this).addClass('current');
+				items.each(function(){
+					var show = f === 'all' || (' ' + jQuery(this).data('cat') + ' ').indexOf(' ' + f + ' ') > -1;
+					jQuery(this).toggle(show);
+					if(show){ jQuery(this).css({visibility: 'visible', animationName: 'none'}); }
+				});
+				return false;
+			});
+		});
 
-      <article class="t-item reveal" data-cat="industry">
-        <span class="t-dot"></span>
-        <div class="t-card">
-          <div class="t-top">
-            <div class="t-logo"><img src="img/Aadil/H-Farm-logo.png" alt="H-Farm logo" /></div>
-            <div class="t-meta">
-              <div class="t-row">
-                <div>
-                  <h3 class="t-role">Innovation Analyst Intern</h3>
-                  <div class="t-org">H-Farm · Open Innovation &amp; H-Farm AI</div>
-                </div>
-                <div><div class="t-when">Jun 2025 - Aug 2025</div><div class="t-where">Venice, Italy</div></div>
-              </div>
-            </div>
-          </div>
-          <ul class="t-bullets">
-            <li>Scouted <b>150+ startups</b> and shortlisted <b>50 for Toyota</b> in Southeast Asia across mobility, data partnerships and ESG, as potential collaboration or investment targets.</li>
-            <li>Built a 100+ company database of blockchain ventures for <b>Exponential Science</b>.</li>
-            <li>Automated research and profiling with <b>n8n AI agents</b>, cutting manual screening time by ~30%.</li>
-          </ul>
-          <div class="tags"><span class="tag">Venture scouting</span><span class="tag">n8n</span><span class="tag">AI agents</span><span class="tag">Blockchain</span></div>
-        </div>
-      </article>
-
-      <article class="t-item reveal" data-cat="industry">
-        <span class="t-dot"></span>
-        <div class="t-card">
-          <div class="t-top">
-            <div class="t-logo"><img src="img/Aadil/arrayah-logo.png" alt="Arrayah logo" /></div>
-            <div class="t-meta">
-              <div class="t-row">
-                <div>
-                  <h3 class="t-role">Deep-Tech Intern / Founder's Associate</h3>
-                  <div class="t-org">Arrayah Venture Studio</div>
-                </div>
-                <div><div class="t-when">Jun 2024 - Aug 2024</div><div class="t-where">Dubai, UAE</div></div>
-              </div>
-            </div>
-          </div>
-          <ul class="t-bullets">
-            <li>Interviewed <b>20+ GCC founders</b> and mapped early-stage funding gaps; helped build the mentor network, securing <b>15 mentors in 4 weeks</b>.</li>
-            <li>Helped steer Arrayah's partnership with a regional angel network.</li>
-            <li>Designed the pricing model and prototype for a "sustainable code refactoring-as-a-service" concept targeting cloud savings for mid-market clients.</li>
-          </ul>
-          <div class="tags"><span class="tag">Founder research</span><span class="tag">Pricing</span><span class="tag">Green software</span></div>
-        </div>
-      </article>
-
-      <article class="t-item current reveal" data-cat="research">
-        <span class="t-dot"></span>
-        <div class="t-card">
-          <div class="t-top">
-            <div class="t-logo"><img src="img/Aadil/nyu-logo.png" alt="NYU logo" /></div>
-            <div class="t-meta">
-              <div class="t-row">
-                <div>
-                  <h3 class="t-role">Student Research Assistant, Robotics<span class="badge-now">now</span></h3>
-                  <div class="t-org">REACH Lab / SMART Construction Research Group, NYUAD</div>
-                </div>
-                <div><div class="t-when">Sep 2026 - Present</div><div class="t-where">Abu Dhabi, UAE</div></div>
-              </div>
-            </div>
-          </div>
-          <ul class="t-bullets">
-            <li>LLM and system-integration track on a robotics project with <b>KINESIS</b> and <b>AD Ports</b>; supporting competition operations and ramping up on the robot stack and ROS.</li>
-          </ul>
-          <div class="tags"><span class="tag">ROS</span><span class="tag">LLMs</span><span class="tag">Robotics</span></div>
-        </div>
-      </article>
-
-      <article class="t-item reveal" data-cat="research">
-        <span class="t-dot"></span>
-        <div class="t-card">
-          <div class="t-top">
-            <div class="t-logo"><img src="img/Aadil/nyu-logo.png" alt="NYU logo" /></div>
-            <div class="t-meta">
-              <div class="t-row">
-                <div>
-                  <h3 class="t-role">Research Collaborator, Green AI</h3>
-                  <div class="t-org">NYUAD · with Prof. João Paulo Fernandes</div>
-                </div>
-                <div><div class="t-when">Dec 2024 - May 2026</div><div class="t-where">Abu Dhabi, UAE</div></div>
-              </div>
-            </div>
-          </div>
-          <ul class="t-bullets">
-            <li>Co-authored <a href="https://arxiv.org/abs/2506.01774" target="_blank" rel="noopener">Greening AI-enabled Systems with Software Engineering</a>, a research agenda for environmentally sustainable AI, and attended the week-long workshop in Lausanne.</li>
-            <li>Related work at <a href="https://greensworkshop.github.io" target="_blank" rel="noopener">GREENS'26</a> (ICSE 2026 workshop).</li>
-            <li>Studied how energy use differs across LLM-generated programs, and explored evaluating AI coding agents with early LangChain and SWE-bench experiments.</li>
-          </ul>
-          <div class="tags"><span class="tag">Green software</span><span class="tag">Energy profiling</span><span class="tag">LLMs</span><span class="tag">SWE-bench</span></div>
-        </div>
-      </article>
-
-      <article class="t-item current reveal" data-cat="leadership">
-        <span class="t-dot"></span>
-        <div class="t-card">
-          <div class="t-top">
-            <div class="t-logo"><img src="img/Aadil/VV-logo.png" alt="Violet Ventures logo" /></div>
-            <div class="t-meta">
-              <div class="t-row">
-                <div>
-                  <h3 class="t-role">Student Venture Associate &amp; Co-Lead<span class="badge-now">now</span></h3>
-                  <div class="t-org">Violet Ventures, NYUAD</div>
-                </div>
-                <div><div class="t-when">Sep 2023 - Present</div><div class="t-where">Abu Dhabi, UAE</div></div>
-              </div>
-            </div>
-          </div>
-          <ul class="t-bullets">
-            <li>Screen <b>15 student-led startups</b> each term for startAD (market sizing, comps); support events and marketing.</li>
-            <li>Co-organized <b>Slush'D Abu Dhabi 2024</b>, drawing 500+ attendees and 33 guest speakers.</li>
-          </ul>
-          <div class="tags"><span class="tag">Venture screening</span><span class="tag">Market sizing</span><span class="tag">Events</span></div>
-        </div>
-      </article>
-
-      <article class="t-item current reveal" data-cat="leadership">
-        <span class="t-dot"></span>
-        <div class="t-card">
-          <div class="t-top">
-            <div class="t-logo"><img src="img/Aadil/nyu-logo.png" alt="NYU logo" /></div>
-            <div class="t-meta">
-              <div class="t-row">
-                <div>
-                  <h3 class="t-role">CS Peer Tutor &amp; Teaching Assistant</h3>
-                  <div class="t-org">NYU Abu Dhabi</div>
-                </div>
-                <div><div class="t-when">Aug 2024 - Present</div><div class="t-where">Abu Dhabi, UAE</div></div>
-              </div>
-            </div>
-          </div>
-          <ul class="t-bullets">
-            <li><b>CS Peer Tutor</b>, Academic Resource Center (Sep 2026 - Present).</li>
-            <li><b>Teaching Assistant</b>, Computer Programming for Engineers: led C++ recitations for 20+ students (Aug - Dec 2024).</li>
-          </ul>
-          <div class="tags"><span class="tag">C++</span><span class="tag">Teaching</span></div>
-        </div>
-      </article>
-
-      <article class="t-item reveal" data-cat="leadership">
-        <span class="t-dot"></span>
-        <div class="t-card">
-          <div class="t-top">
-            <div class="t-logo"><img src="img/Aadil/hackAD-logo.png" alt="HackAD logo" /></div>
-            <div class="t-meta">
-              <div class="t-row">
-                <div>
-                  <h3 class="t-role">Vice President &amp; Events Manager</h3>
-                  <div class="t-org">HackAD, NYUAD</div>
-                </div>
-                <div><div class="t-when">Jan 2023 - Dec 2024</div><div class="t-where">Abu Dhabi, UAE</div></div>
-              </div>
-            </div>
-          </div>
-          <ul class="t-bullets">
-            <li>Organized <b>7+ technical events</b>, including a <b>100+ participant hackathon</b> and "ML for All" workshops.</li>
-            <li>Also: student assistant at <b>MARSS 2024</b> (international robotics conference, 200+ academics) and Founder's Associate of <b>The Consulting Collective</b>.</li>
-          </ul>
-          <div class="tags"><span class="tag">Hackathons</span><span class="tag">Community</span></div>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="section" id="projects">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">03 · projects</div>
-      <h2 class="section-title">Things I've built</h2>
-      <p class="section-sub">From IDE tooling and AR apps to energy benchmarks and interactive films. <i class="fa-solid fa-lock" style="font-size:13px"></i> marks private repos; ask me for a walkthrough.</p>
-    </div>
-    <div class="filters reveal" data-filter-group="proj">
-      <button class="filter active" data-filter="all">All</button>
-      <button class="filter" data-filter="ai">AI &amp; ML</button>
-      <button class="filter" data-filter="research">Research</button>
-      <button class="filter" data-filter="systems">Systems</button>
-      <button class="filter" data-filter="creative">Creative &amp; Hardware</button>
-    </div>
-
-    <div class="projects-grid" id="projects-grid">
-      <article class="p-card featured reveal" data-cat="ai systems">
-        <div class="p-head">
-          <div class="p-icon"><i class="fa-solid fa-code-branch"></i></div>
-          <div class="p-links"><span title="Private repository"><i class="fa-solid fa-lock"></i> Private</span></div>
-        </div>
-        <div class="p-year">2026 · IDE tooling</div>
-        <h3 class="p-title">CodeTrail</h3>
-        <p class="p-desc">
-          A Code-OSS-based IDE that tracks code provenance: a Google-Docs-style history showing how much of every file was
-          <b>typed</b>, <b>pasted</b>, or <b>generated by AI</b> (Copilot, Claude, coding agents). Per-character provenance spans survive edits,
-          an append-only ledger forms a tamper-evident audit trail, and reports export to JSON/CSV. Built for universities that need
-          evidence of AI use instead of guesswork.
-        </p>
-        <div class="p-highlight">
-          <div><strong>5</strong><span>edit origins classified live</span></div>
-          <div><strong>Per-char</strong><span>provenance spans</span></div>
-          <div><strong>JSON / CSV</strong><span>LMS-ready exports</span></div>
-        </div>
-        <div class="tags"><span class="tag">TypeScript</span><span class="tag">VS Code / Code-OSS</span><span class="tag">Webviews</span></div>
-      </article>
-
-      <article class="p-card reveal" data-cat="ai research">
-        <div class="p-head">
-          <div class="p-icon violet"><i class="fa-solid fa-chess-knight"></i></div>
-          <div class="p-links"><span title="Private repository"><i class="fa-solid fa-lock"></i> Private</span></div>
-        </div>
-        <div class="p-year">2026 · Deep learning</div>
-        <h3 class="p-title">Chess Style Fingerprint</h3>
-        <p class="p-desc">Learns a similarity space for chess games without player names or engine scores: 84×8×8 board tensors, a spatial CNN + Transformer, and supervised contrastive training for style retrieval.</p>
-        <div class="p-highlight">
-          <div><strong>76%</strong><span>top-1 retrieval (Tal vs Carlsen)</span></div>
-          <div><strong>82%</strong><span>mean avg. precision</span></div>
-        </div>
-        <div class="tags"><span class="tag">PyTorch</span><span class="tag">Metric learning</span><span class="tag">Transformers</span></div>
-      </article>
-
-      <article class="p-card reveal" data-cat="ai">
-        <div class="p-head">
-          <div class="p-icon amber"><i class="fa-solid fa-couch"></i></div>
-          <div class="p-links"><span title="Private repository"><i class="fa-solid fa-lock"></i> Private</span></div>
-        </div>
-        <div class="p-year">2026 · AR / mobile</div>
-        <h3 class="p-title">RoomWise</h3>
-        <p class="p-desc">Scan a room with Apple RoomPlan on a LiDAR iPhone, place a dimensionally scaled chair in real AR, and check whether it fits against detected walls and furniture. Shared Kotlin geometry core, plus a desktop app with an AI shopping agent.</p>
-        <div class="tags"><span class="tag">Swift</span><span class="tag">ARKit</span><span class="tag">RoomPlan</span><span class="tag">Kotlin Multiplatform</span><span class="tag">Compose</span></div>
-      </article>
-
-      <article class="p-card reveal" data-cat="research ai">
-        <div class="p-head">
-          <div class="p-icon violet"><i class="fa-solid fa-book-open-reader"></i></div>
-          <div class="p-links"><span title="Private repository"><i class="fa-solid fa-lock"></i> Private</span></div>
-        </div>
-        <div class="p-year">2026 · Capstone research</div>
-        <h3 class="p-title">Title Specificity</h3>
-        <p class="p-desc">Measures how specific a paper's title is relative to its abstract using SPECTER2 embeddings over SciSciNet, and tests how that relates to citation impact. Runs as SLURM jobs on NYUAD's Jubail HPC.</p>
-        <div class="tags"><span class="tag">SPECTER2</span><span class="tag">Science of science</span><span class="tag">SLURM / HPC</span><span class="tag">Python</span></div>
-      </article>
-
-      <article class="p-card featured reveal" data-cat="research">
-        <div class="p-head">
-          <div class="p-icon"><i class="fa-solid fa-leaf"></i></div>
-          <div class="p-links"><a href="https://github.com/Aarz1401/Aarz_GreenTranspilation" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a></div>
-        </div>
-        <div class="p-year">2025 · Green software research</div>
-        <h3 class="p-title">Green Transpilation</h3>
-        <p class="p-desc">
-          How much energy do you save by rewriting Python in C++? An end-to-end pipeline that fetches LeetCode-hard problems from before and after
-          the GPT-5 training cutoff, verifies Python solutions, translates them to C++ with GPT-5, re-verifies on LeetCode, generates matching tests,
-          and measures energy with pyRAPL.
-        </p>
-        <div class="p-highlight">
-          <div><strong>8-stage</strong><span>automated pipeline</span></div>
-          <div><strong>pyRAPL</strong><span>hardware energy readings</span></div>
-          <div><strong>Pre/post</strong><span>cutoff contamination control</span></div>
-        </div>
-        <div class="tags"><span class="tag">Python</span><span class="tag">C++</span><span class="tag">GPT-5</span><span class="tag">Energy profiling</span></div>
-      </article>
-
-      <article class="p-card reveal" data-cat="systems">
-        <div class="p-head">
-          <div class="p-icon rose"><i class="fa-solid fa-terminal"></i></div>
-          <div class="p-links"><span title="Private for academic integrity"><i class="fa-solid fa-lock"></i> Private</span></div>
-        </div>
-        <div class="p-year">2026 · Operating Systems</div>
-        <h3 class="p-title">Remote Shell + Scheduler</h3>
-        <p class="p-desc">A Unix shell in C with N-way pipes and redirection, extended into a multithreaded TCP client/server with a Round Robin + Shortest-Remaining-Job-First scheduler and Gantt-chart logging. I owned the executor: fork/exec, dup2, pipelines.</p>
-        <div class="tags"><span class="tag">C</span><span class="tag">POSIX</span><span class="tag">pthreads</span><span class="tag">Sockets</span></div>
-      </article>
-
-      <article class="p-card reveal" data-cat="systems">
-        <div class="p-head">
-          <div class="p-icon"><i class="fa-solid fa-network-wired"></i></div>
-          <div class="p-links"><a href="https://github.com/Aarz1401/CN_Project1_aala" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a></div>
-        </div>
-        <div class="p-year">2025 · Computer Networks</div>
-        <h3 class="p-title">Chunked File Transfer</h3>
-        <p class="p-desc">Team networks project that splits a file into chunks, moves them between networked processes and reassembles it at the receiver, with Makefile-driven orchestration.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">Sockets</span><span class="tag">Make</span></div>
-      </article>
-
-      <article class="p-card reveal" data-cat="systems">
-        <div class="p-head">
-          <div class="p-icon amber"><i class="fa-solid fa-scale-balanced"></i></div>
-          <div class="p-links"><a href="https://github.com/Aarz1401/Iterated-Prisoner-s-Dilemma" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a></div>
-        </div>
-        <div class="p-year">2023 · Game theory</div>
-        <h3 class="p-title">Iterated Prisoner's Dilemma</h3>
-        <p class="p-desc">A C++ simulator that pits four strategies (Random, Tit for Tat, always-defect and always-cooperate) against each other over repeated rounds.</p>
-        <div class="tags"><span class="tag">C++</span><span class="tag">Simulation</span><span class="tag">Economics</span></div>
-      </article>
-
-      <article class="p-card reveal" data-cat="creative">
-        <div class="p-head">
-          <div class="p-icon rose"><i class="fa-solid fa-robot"></i></div>
-          <div class="p-links">
-            <a href="https://intro.nyuadim.com/2024/05/11/final-project-interactive-mr-octopus/" target="_blank" rel="noopener" aria-label="Write-up"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            <a href="https://github.com/Aarz1401/Mr-Octopus---A-Robot-with-emotions" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-          </div>
-        </div>
-        <div class="p-year">2024 · Robotics</div>
-        <h3 class="p-title">Interactive Mr. Octopus</h3>
-        <p class="p-desc">A wireless, sensor-driven robot pet with emotional states. It reacts to obstacles and touch, and a p5.js twin on the laptop mirrors its mood with sound.</p>
-        <div class="tags"><span class="tag">Arduino</span><span class="tag">p5.js</span><span class="tag">Sensors</span></div>
-      </article>
-
-      <article class="p-card media reveal" data-cat="creative">
-        <div class="p-thumb"><img src="img/projects/VR-simulation.jpg" alt="Underwater Atlantis VR scene" loading="lazy" /></div>
-        <div class="p-body">
-          <div class="p-head">
-            <div class="p-year">2024 · Unity VR</div>
-            <div class="p-links"><a href="https://github.com/Aarz1401/Atlantis_VR_simul" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></div>
-          </div>
-          <h3 class="p-title">Atlantis VR</h3>
-          <p class="p-desc">An interactive underwater VR simulation of the lost city of Atlantis.</p>
-          <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span></div>
-        </div>
-      </article>
-
-      <article class="p-card media reveal" data-cat="creative">
-        <div class="p-thumb"><img src="img/projects/HTSADWP_film.jpg" alt="How To Survive a Day Without a Phone title card" loading="lazy" /></div>
-        <div class="p-body">
-          <div class="p-head">
-            <div class="p-year">2024 · Interactive film</div>
-            <div class="p-links">
-              <a href="https://aarz1401.github.io/How-To-Survive-a-Day-without-a-Phone--CL-4/index.html" target="_blank" rel="noopener" aria-label="Website"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              <a href="https://github.com/Aarz1401/How-To-Survive-a-Day-without-a-Phone--CL-4" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            </div>
-          </div>
-          <h3 class="p-title">How To Survive a Day Without a Phone</h3>
-          <p class="p-desc">A short interactive film, presented through a custom website.</p>
-          <div class="tags"><span class="tag">JavaScript</span><span class="tag">Film</span></div>
-        </div>
-      </article>
-
-      <article class="p-card media reveal" data-cat="creative">
-        <div class="p-thumb"><img src="img/projects/comic-strip.jpg" alt="11th Hour Heroics comic panel" loading="lazy" /></div>
-        <div class="p-body">
-          <div class="p-head">
-            <div class="p-year">2024 · Interactive comic</div>
-            <div class="p-links">
-              <a href="https://aarz1401.github.io/11th_Hour_Heroic/index.html" target="_blank" rel="noopener" aria-label="Website"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              <a href="https://github.com/Aarz1401/11th_Hour_Heroic" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            </div>
-          </div>
-          <h3 class="p-title">11th Hour Heroics</h3>
-          <p class="p-desc">A comedic comic strip with branching choices and audio.</p>
-          <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span></div>
-        </div>
-      </article>
-
-      <article class="p-card media reveal" data-cat="creative">
-        <div class="p-thumb"><img src="img/projects/Audio-project.jpg" alt="Flow of Life audioscape artwork" loading="lazy" /></div>
-        <div class="p-body">
-          <div class="p-head">
-            <div class="p-year">2024 · Audioscape</div>
-            <div class="p-links">
-              <a href="https://aarz1401.github.io/Journey_of_Water_Cl3/index.html" target="_blank" rel="noopener" aria-label="Website"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              <a href="https://github.com/Aarz1401/Journey_of_Water_Cl3" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            </div>
-          </div>
-          <h3 class="p-title">Flow of Life</h3>
-          <p class="p-desc">An audio story of how water gives life, and how life is reflected in water.</p>
-          <div class="tags"><span class="tag">Sound design</span><span class="tag">Web</span></div>
-        </div>
-      </article>
-
-      <article class="p-card media reveal" data-cat="creative">
-        <div class="p-thumb"><img src="img/projects/30MFF.jpg" alt="Little Things That Make Us Happy film still" loading="lazy" /></div>
-        <div class="p-body">
-          <div class="p-head">
-            <div class="p-year">2024 · Short film</div>
-            <div class="p-links">
-              <a href="https://aarz1401.github.io/Little-Things-that-make-us-happy-website/" target="_blank" rel="noopener" aria-label="Website"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-              <a href="https://github.com/Aarz1401/Little-Things-that-make-us-happy-website" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            </div>
-          </div>
-          <h3 class="p-title">Little Things That Make Us Happy</h3>
-          <p class="p-desc">A short film about the small, everyday things that make us happy.</p>
-          <div class="tags"><span class="tag">Film</span><span class="tag">Web</span></div>
-        </div>
-      </article>
-    </div>
-
-    <div class="gh-cta reveal">
-      <a class="btn btn-ghost" href="https://github.com/Aarz1401" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> More on GitHub <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section class="section" id="skills">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">04 · skills</div>
-      <h2 class="section-title">Toolbox</h2>
-      <p class="section-sub">What I reach for when building, measuring and analysing.</p>
-    </div>
-    <div class="skills-grid">
-      <div class="card skill-card reveal">
-        <h3><i class="fa-solid fa-code"></i> Languages</h3>
-        <div class="skill-list">
-          <span class="skill"><i class="devicon-python-plain"></i>Python</span>
-          <span class="skill"><i class="devicon-cplusplus-plain"></i>C++</span>
-          <span class="skill"><i class="devicon-c-plain"></i>C</span>
-          <span class="skill"><i class="devicon-java-plain"></i>Java</span>
-          <span class="skill"><i class="devicon-javascript-plain"></i>JavaScript</span>
-          <span class="skill"><i class="devicon-typescript-plain"></i>TypeScript</span>
-          <span class="skill"><i class="devicon-swift-plain"></i>Swift</span>
-          <span class="skill"><i class="devicon-kotlin-plain"></i>Kotlin</span>
-          <span class="skill"><i class="devicon-azuresqldatabase-plain"></i>SQL</span>
-          <span class="skill"><i class="devicon-csharp-plain"></i>C#</span>
-        </div>
-      </div>
-      <div class="card skill-card reveal">
-        <h3><i class="fa-solid fa-brain"></i> AI / Machine Learning</h3>
-        <div class="skill-list">
-          <span class="skill"><i class="devicon-pytorch-original"></i>PyTorch</span>
-          <span class="skill"><i class="devicon-tensorflow-original"></i>TensorFlow</span>
-          <span class="skill"><i class="fa-solid fa-link"></i>LangChain</span>
-          <span class="skill"><i class="fa-solid fa-robot"></i>LLM Agents</span>
-          <span class="skill"><i class="fa-solid fa-plug"></i>MCP</span>
-          <span class="skill"><i class="fa-brands fa-microsoft"></i>Microsoft Graph</span>
-          <span class="skill"><i class="fa-solid fa-comments"></i>Copilot Studio</span>
-          <span class="skill"><i class="devicon-numpy-plain"></i>NumPy</span>
-          <span class="skill"><i class="devicon-pandas-plain"></i>pandas</span>
-        </div>
-      </div>
-      <div class="card skill-card reveal">
-        <h3><i class="fa-solid fa-cloud"></i> Cloud &amp; DevOps</h3>
-        <div class="skill-list">
-          <span class="skill"><i class="devicon-kubernetes-plain"></i>Kubernetes</span>
-          <span class="skill"><i class="devicon-docker-plain"></i>Docker</span>
-          <span class="skill"><i class="devicon-linux-plain"></i>Linux</span>
-          <span class="skill"><i class="devicon-git-plain"></i>Git</span>
-          <span class="skill"><i class="devicon-azuredevops-plain"></i>Azure DevOps</span>
-          <span class="skill"><i class="devicon-nodejs-plain"></i>Node.js</span>
-          <span class="skill"><i class="devicon-postgresql-plain"></i>PostgreSQL</span>
-          <span class="skill"><i class="devicon-mongodb-plain"></i>MongoDB</span>
-        </div>
-      </div>
-      <div class="card skill-card reveal">
-        <h3><i class="fa-solid fa-chart-line"></i> LLM Evaluation &amp; Observability</h3>
-        <div class="skill-list">
-          <span class="skill">Arize Phoenix</span>
-          <span class="skill">RAGAS</span>
-          <span class="skill">DeepEval</span>
-          <span class="skill">OpenTelemetry</span>
-          <span class="skill"><i class="devicon-grafana-plain"></i>Grafana Alloy</span>
-        </div>
-      </div>
-      <div class="card skill-card reveal">
-        <h3><i class="fa-solid fa-sack-dollar"></i> Finance &amp; Analytics</h3>
-        <div class="skill-list">
-          <span class="skill">Trading comps</span>
-          <span class="skill">Scenario modelling</span>
-          <span class="skill">Market sizing</span>
-          <span class="skill"><i class="fa-solid fa-table"></i>Excel</span>
-          <span class="skill"><i class="devicon-matplotlib-plain"></i>matplotlib</span>
-          <span class="skill">Bloomberg (basic)</span>
-        </div>
-      </div>
-      <div class="card skill-card reveal">
-        <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Creative &amp; Hardware</h3>
-        <div class="skill-list">
-          <span class="skill"><i class="devicon-unity-plain"></i>Unity</span>
-          <span class="skill"><i class="devicon-arduino-plain"></i>Arduino</span>
-          <span class="skill"><i class="devicon-p5js-original"></i>p5.js</span>
-          <span class="skill"><i class="devicon-figma-plain"></i>Figma</span>
-          <span class="skill"><i class="devicon-photoshop-plain"></i>Photoshop</span>
-          <span class="skill"><i class="fa-solid fa-diagram-project"></i>n8n</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="marquee reveal" aria-hidden="true">
-      <div class="marquee-track" id="marquee-track">
-        <span><i class="devicon-python-plain colored"></i>Python</span>
-        <span><i class="devicon-pytorch-original colored"></i>PyTorch</span>
-        <span><i class="devicon-cplusplus-plain colored"></i>C++</span>
-        <span><i class="devicon-typescript-plain colored"></i>TypeScript</span>
-        <span><i class="devicon-kubernetes-plain colored"></i>Kubernetes</span>
-        <span><i class="devicon-docker-plain colored"></i>Docker</span>
-        <span><i class="devicon-swift-plain colored"></i>Swift</span>
-        <span><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
-        <span><i class="devicon-linux-plain"></i>Linux</span>
-        <span><i class="devicon-java-plain colored"></i>Java</span>
-        <span><i class="devicon-unity-plain"></i>Unity</span>
-        <span><i class="devicon-arduino-plain colored"></i>Arduino</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AWARDS -->
-<section class="section" id="awards">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">05 · recognition</div>
-      <h2 class="section-title">Bootcamps &amp; awards</h2>
-    </div>
-    <div class="awards">
-      <div class="card award reveal">
-        <div class="p-icon amber"><i class="fa-solid fa-trophy"></i></div>
-        <div>
-          <span class="when">Jul 2025 · Startup Center Bootcamp</span>
-          <h3>1st Prize · CogniCare</h3>
-          <p>An AI voice-assistant wearable for Alzheimer's and dementia care. Pitched to 4+ investors.</p>
-        </div>
-      </div>
-      <div class="card award reveal">
-        <div class="p-icon"><i class="fa-solid fa-seedling"></i></div>
-        <div>
-          <span class="when">Jul 2025 · LUMINA Bootcamp</span>
-          <h3>ESG-reporting platform</h3>
-          <p>Prototyped an ESG-reporting consulting platform and assessed its market viability.</p>
-        </div>
-      </div>
-      <div class="card award reveal">
-        <div class="p-icon violet"><i class="fa-solid fa-scroll"></i></div>
-        <div>
-          <span class="when">2025 · arXiv 2506.01774</span>
-          <h3>Green AI research agenda</h3>
-          <p><a href="https://arxiv.org/abs/2506.01774" target="_blank" rel="noopener" style="color:var(--accent)">Greening AI-enabled Systems with Software Engineering</a>, co-authored from the Lausanne workshop.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CV -->
-<section class="section" id="cv">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">06 · résumé</div>
-      <h2 class="section-title">Pick your CV</h2>
-      <p class="section-sub">Two versions of the same story, one for engineering roles and one for business, venture and consulting roles.</p>
-    </div>
-    <div class="cv-wrap reveal">
-      <div class="cv-side">
-        <button class="cv-tab active" data-cv="CV/Aadil_Chasmawala_CV_Technical.pdf">
-          <strong><i class="fa-solid fa-microchip"></i> Technical CV</strong>
-          <span>MCP tooling, agent evaluation, research and systems projects.</span>
-        </button>
-        <button class="cv-tab" data-cv="CV/Aadil_Chasmawala_CV_Business.pdf">
-          <strong><i class="fa-solid fa-briefcase"></i> Business CV</strong>
-          <span>Venture scouting, founder research, markets and leadership.</span>
-        </button>
-        <div class="cv-actions">
-          <a class="btn btn-primary btn-sm" id="cv-download" href="CV/Aadil_Chasmawala_CV_Technical.pdf" download><i class="fa-solid fa-download"></i> Download</a>
-          <a class="btn btn-ghost btn-sm" id="cv-open" href="CV/Aadil_Chasmawala_CV_Technical.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Open</a>
-        </div>
-        <p class="cv-mobile-note">Tap Open to view the PDF full-screen.</p>
-      </div>
-      <div class="cv-viewer">
-        <iframe id="cv-frame" src="CV/Aadil_Chasmawala_CV_Technical.pdf#view=FitH" title="Aadil Chasmawala CV" loading="lazy"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section" id="contact">
-  <div class="container">
-    <div class="card contact-card reveal">
-      <div class="contact-left">
-        <div class="eyebrow">07 · contact</div>
-        <h2>Let's build something.</h2>
-        <p>Open to internships, research collaborations and interesting conversations about AI, green software or startups.</p>
-        <ul class="contact-links">
-          <li><button type="button" data-copy="aac10066@nyu.edu"><i class="fa-solid fa-envelope"></i>aac10066@nyu.edu<span class="hint">click to copy</span></button></li>
-          <li><a href="https://www.linkedin.com/in/aadil-chasmawala/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i>linkedin.com/in/aadil-chasmawala<span class="hint">↗</span></a></li>
-          <li><a href="https://github.com/Aarz1401" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i>github.com/Aarz1401<span class="hint">↗</span></a></li>
-          <li><a href="https://wa.me/971525244180" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>+971 52 524 4180<span class="hint">↗</span></a></li>
-        </ul>
-      </div>
-      <form class="contact-form" id="contact-form">
-        <div class="form-row">
-          <div class="field">
-            <label for="name">Name</label>
-            <input id="name" name="from_name" type="text" placeholder="Your name" required />
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="you@example.com" required />
-          </div>
-        </div>
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="What's on your mind?" required></textarea>
-        </div>
-        <div>
-          <button class="btn btn-primary" type="submit" id="send-btn"><i class="fa-solid fa-paper-plane"></i> Send message</button>
-        </div>
-        <p class="form-status" id="form-status" role="status"></p>
-      </form>
-    </div>
-  </div>
-</section>
-</main>
-
-<footer>
-  <div class="container footer-inner">
-    <span>© <span id="year">2026</span> Aadil Chasmawala · Abu Dhabi</span>
-    <span class="mono" style="font-size:12px">Press <kbd>⌘K</kbd> / <kbd>Ctrl K</kbd> to jump anywhere</span>
-    <div class="hero-social">
-      <a href="https://github.com/Aarz1401" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/aadil-chasmawala/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="mailto:aac10066@nyu.edu" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-    </div>
-  </div>
-</footer>
-
-<!-- Command palette -->
-<div class="palette-backdrop" id="palette" role="dialog" aria-modal="true" aria-label="Command menu">
-  <div class="palette">
-    <div class="palette-input">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input id="palette-input" type="text" placeholder="Type a command or search…" autocomplete="off" />
-      <kbd>esc</kbd>
-    </div>
-    <ul class="palette-list" id="palette-list"></ul>
-    <div class="palette-foot"><span><kbd>↑</kbd> <kbd>↓</kbd> navigate</span><span><kbd>↵</kbd> select</span></div>
-  </div>
-</div>
-<div class="toast" id="toast"></div>
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script src="js/main.js"></script>
+		// CV switcher
+		jQuery('.aac_cv_tab').on('click', function(){
+			var path = jQuery(this).data('cv');
+			jQuery('.aac_cv_tab').removeClass('current');
+			jQuery(this).addClass('current');
+			jQuery('#cv_frame').attr('src', path + '#view=FitH');
+			jQuery('#cv_download, #cv_open').attr('href', path);
+			return false;
+		});
+	});
+</script>
 </body>
+
+<!-- Template from frenify.com/envato/marketify/html/arlo/1/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Mar 2019 09:48:54 GMT -->
 </html>
