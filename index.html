@@ -76,6 +76,7 @@
 		<!-- LEFTPART (navbar) -->
 		<div class="arlo_tm_leftpart_wrap">
 			<div class="leftpart_inner">
+				<div class="aac_progress"><span></span></div>
 				<div class="logo_wrap">
 					<a href="#"><img src="img/logo/aac_logo.jpeg" alt="desktop-logo" height="100" width="100" /></a>
 				</div>
@@ -399,8 +400,8 @@
 								<li><a href="#" data-filter="systems">Systems</a></li>
 								<li><a href="#" data-filter="creative">Creative &amp; Hardware</a></li>
 							</ul>
-							<div class="arlo_tm_list_wrap aac_projects">
-								<ul class="total" id="project_list">
+							<div class="arlo_tm_list_wrap aac_projects aac_tilt">
+								<ul class="total gallery_zoom" id="project_list">
 									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="ai systems">
 										<div class="inner_list">
 											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-code-branch"></i><span>TypeScript &middot; Code-OSS</span></div></div>
@@ -505,7 +506,7 @@
 									</li>
 									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="creative">
 										<div class="inner_list">
-											<div class="image_wrap"><img src="img/projects/VR-simulation.jpg" alt="Atlantis VR simulation" loading="lazy"></div>
+											<div class="image_wrap"><a class="zoom" href="img/projects/VR-simulation.jpg" title="Atlantis VR simulation"><img src="img/projects/VR-simulation.jpg" alt="Atlantis VR simulation" loading="lazy"></a></div>
 											<div class="definitions_wrap">
 												<div class="date_wrap"><p>2024 &middot; Unity VR</p></div>
 												<div class="title_holder"><h3>Underwater Interactive VR Simulation</h3></div>
@@ -516,7 +517,7 @@
 									</li>
 									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="creative">
 										<div class="inner_list">
-											<div class="image_wrap"><img src="img/projects/HTSADWP_film.jpg" alt="How To Survive a Day Without a Phone" loading="lazy"></div>
+											<div class="image_wrap"><a class="zoom" href="img/projects/HTSADWP_film.jpg" title="How To Survive a Day Without a Phone"><img src="img/projects/HTSADWP_film.jpg" alt="How To Survive a Day Without a Phone" loading="lazy"></a></div>
 											<div class="definitions_wrap">
 												<div class="date_wrap"><p>2024 &middot; Interactive Film</p></div>
 												<div class="title_holder"><h3>How To Survive a Day Without a Phone</h3></div>
@@ -530,7 +531,7 @@
 									</li>
 									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="creative">
 										<div class="inner_list">
-											<div class="image_wrap"><img src="img/projects/comic-strip.jpg" alt="11th Hour Heroics comic" loading="lazy"></div>
+											<div class="image_wrap"><a class="zoom" href="img/projects/comic-strip.jpg" title="11th Hour Heroics comic"><img src="img/projects/comic-strip.jpg" alt="11th Hour Heroics comic" loading="lazy"></a></div>
 											<div class="definitions_wrap">
 												<div class="date_wrap"><p>2024 &middot; Interactive Comic</p></div>
 												<div class="title_holder"><h3>11th Hour Heroics</h3></div>
@@ -544,7 +545,7 @@
 									</li>
 									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="creative">
 										<div class="inner_list">
-											<div class="image_wrap"><img src="img/projects/Audio-project.jpg" alt="Flow of Life audioscape" loading="lazy"></div>
+											<div class="image_wrap"><a class="zoom" href="img/projects/Audio-project.jpg" title="Flow of Life audioscape"><img src="img/projects/Audio-project.jpg" alt="Flow of Life audioscape" loading="lazy"></a></div>
 											<div class="definitions_wrap">
 												<div class="date_wrap"><p>2024 &middot; Audioscape</p></div>
 												<div class="title_holder"><h3>Flow of Life - Audioscape of Water</h3></div>
@@ -558,7 +559,7 @@
 									</li>
 									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="creative">
 										<div class="inner_list">
-											<div class="image_wrap"><img src="img/projects/30MFF.jpg" alt="Little Things that Make us Happy" loading="lazy"></div>
+											<div class="image_wrap"><a class="zoom" href="img/projects/30MFF.jpg" title="Little Things that Make us Happy"><img src="img/projects/30MFF.jpg" alt="Little Things that Make us Happy" loading="lazy"></a></div>
 											<div class="definitions_wrap">
 												<div class="date_wrap"><p>2024 &middot; Short Film</p></div>
 												<div class="title_holder"><h3>30 MFF - Little Things that Make us Happy</h3></div>
@@ -763,6 +764,7 @@
 									<div class="short_info_wrap">
 										<ul>
 											<li><p><label>Address:</label><span>Abu Dhabi, UAE</span></p></li>
+											<li><p><label>Local time:</label><span class="aac_clock" id="aac_clock">Abu Dhabi</span></p></li>
 											<li><p><label>Email:</label><span><a href="mailto:aac10066@nyu.edu">aac10066@nyu.edu</a></span></p></li>
 											<li><p><label>Phone:</label><span><a href="https://wa.me/971525244180">+971 52 524 4180</a></span></p></li>
 											<li><p><label>LinkedIn:</label><span><a href="https://www.linkedin.com/in/aadil-chasmawala/" target="_blank" rel="noopener">aadil-chasmawala</a></span></p></li>
@@ -828,6 +830,7 @@
 <script src="js/jquery.js"></script>
 <script src="js/plugins.js"></script>
 <script src="init.js"></script>
+<script src="js/extras.js"></script>
 <!-- /SCRIPTS -->
 
 <!-- Custom scripts-->

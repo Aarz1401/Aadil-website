@@ -481,3 +481,155 @@
 	.aac_cv_viewer{display: none;}
 	.skills_icons{gap: 6%;}
 }
+
+
+/* ------------------------------------------------------------------ */
+/* Subtle interactions                                                  */
+/* ------------------------------------------------------------------ */
+
+/* Active section in the sidebar (onePageNav adds .current) */
+.arlo_tm_leftpart_wrap .menu_list_wrap ul li.current a{color: #00ADB5;}
+.arlo_tm_leftpart_wrap .menu_list_wrap ul li.current a:before{width: 35px;}
+
+/* Scroll progress line on the sidebar edge */
+.aac_progress{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 2px;
+	height: 100%;
+	background-color: rgba(255,255,255,.05);
+	z-index: 5;
+}
+.aac_progress span{
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: #00ADB5;
+	transform-origin: 0 0;
+	transform: scaleY(0);
+}
+
+/* Hero name: letters rise in after the preloader */
+.arlo_tm_hero_header_wrap .name_holder h3 span.aac_char{
+	color: inherit;
+	font-weight: inherit;
+}
+.name_holder h3 .aac_char{
+	display: inline-block;
+	opacity: 0;
+	transform: translateY(40%);
+	transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1);
+}
+.name_holder h3.aac_ready .aac_char{
+	opacity: 1;
+	transform: none;
+}
+.arlo_tm_universal_box_wrap .overlay_image.hero{
+	transition: transform .8s cubic-bezier(.2,.7,.2,1);
+	will-change: transform;
+}
+
+/* Section titles: bar grows, heading slides in */
+.aac_reveal:before{
+	transform: scaleY(0);
+	transform-origin: 0 0;
+	transition: transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.aac_reveal h3,
+.aac_reveal > span{
+	display: inline-block;
+	opacity: 0;
+	transform: translateX(-20px);
+	transition: opacity .7s ease .15s, transform .7s cubic-bezier(.2,.7,.2,1) .15s;
+}
+.aac_reveal > span{transition-delay: .3s; display: block;}
+.aac_reveal.aac_in:before{transform: scaleY(1);}
+.aac_reveal.aac_in h3,
+.aac_reveal.aac_in > span{
+	opacity: 1;
+	transform: none;
+}
+
+/* Project cards: tilt + light sheen */
+.aac_tilt .inner_list{
+	transform-style: preserve-3d;
+	transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s ease;
+	will-change: transform;
+}
+.aac_tilt .inner_list:hover{
+	top: 0px;
+	box-shadow: 0 25px 40px -20px rgba(34,40,49,.35);
+}
+.aac_tilt .inner_list:after{
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	border-radius: 3px;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity .4s ease;
+	background: radial-gradient(500px circle at var(--aac-x, 50%) var(--aac-y, 50%), rgba(255,255,255,.18), transparent 40%);
+}
+.aac_tilt .inner_list:hover:after{opacity: 1;}
+
+/* Lightbox links on project screenshots */
+.aac_projects .image_wrap a.zoom{
+	display: block;
+	height: 100%;
+	position: relative;
+	cursor: zoom-in;
+}
+.aac_projects .image_wrap a.zoom:after{
+	content: "\f00e";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	position: absolute;
+	right: 15px;
+	bottom: 15px;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	border-radius: 3px;
+	background-color: #00ADB5;
+	color: #fff;
+	font-size: 14px;
+	opacity: 0;
+	transform: translateY(8px);
+	transition: all .3s ease;
+}
+.aac_projects .inner_list:hover .image_wrap a.zoom:after{
+	opacity: 1;
+	transform: none;
+}
+
+/* Live local time */
+.aac_clock{
+	font-variant-numeric: tabular-nums;
+}
+.aac_clock:before{
+	content: "";
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background-color: #00ADB5;
+	margin-right: 8px;
+	vertical-align: 2px;
+	animation: aac_blink 2s ease-in-out infinite;
+}
+@keyframes aac_blink{ 50%{ opacity: .25; } }
+
+@media (prefers-reduced-motion: reduce){
+	.name_holder h3 .aac_char,
+	.aac_reveal:before, .aac_reveal h3, .aac_reveal > span{
+		opacity: 1 !important;
+		transform: none !important;
+		transition: none !important;
+	}
+	.aac_clock:before{animation: none;}
+}

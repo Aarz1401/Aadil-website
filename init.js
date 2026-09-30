@@ -729,11 +729,11 @@ function arlo_tm_data_images(){
 		
 		"use strict";
 		
-		if ($('.parallax').length > 0) { 
-		  var scene = $('.parallax').get(0);
+		if ($('.about_image_wrap.parallax').length > 0) { 
+		  var scene = $('.about_image_wrap.parallax').get(0);
 		  var parallax = new Parallax(scene, { 
 			relativeInput: true,
-			onReady: function() { console.log('ready!');
+			onReady: function() {
 		  } });
 		}
 	}
