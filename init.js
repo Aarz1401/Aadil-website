@@ -693,12 +693,27 @@ jQuery('.arlo_tm_counter').each(function() {
 		handler: function(){
 
 			if(!el.hasClass('stop')){
-				el.addClass('stop').countTo({
-					refreshInterval: 50,
-					formatter: function (value, options) {
-						return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
-					},	
-				});
+				el.addClass('stop');
+				var count = function(){
+					el.countTo({
+						refreshInterval: 50,
+						formatter: function (value, options) {
+							return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+						},
+					});
+				};
+				// Brief flicker of scrambled digits before the count starts
+				if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){ count(); return; }
+				var target = String(el.data('to')), ticks = 0;
+				var flick = setInterval(function(){
+					var out = '';
+					for(var i = 0; i < target.length; i++){
+						var c = target.charAt(i);
+						out += /\d/.test(c) ? Math.floor(Math.random() * 10) : c;
+					}
+					el.text(out);
+					if(++ticks >= 9){ clearInterval(flick); count(); }
+				}, 45);
 			}
 		},offset:'80%'	
 	});

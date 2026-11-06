@@ -94,6 +94,20 @@
 		var W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
 		var nodes = [], mouse = { x: -9999, y: -9999 }, running = false, visible = true;
 		var LINK = 130;
+		/* A brief brightening around one point, fired by navigation or returning to the hero */
+		var pulse = 0, pcx = 0, pcy = 0;
+		var firePulse = function () {
+			if (reduceMotion) return;
+			pcx = W * (0.25 + Math.random() * 0.5);
+			pcy = H * (0.25 + Math.random() * 0.5);
+			pulse = 1;
+		};
+		var boost = function (x, y) {
+			if (pulse < 0.01) return 1;
+			var dx = x - pcx, dy = y - pcy, r = Math.max(W, H) * 0.35;
+			var k = Math.max(0, 1 - Math.sqrt(dx * dx + dy * dy) / r);
+			return 1 + pulse * k * 3;
+		};
 
 		var size = function () {
 			var r = net.getBoundingClientRect();
@@ -119,7 +133,7 @@
 				for (var b = a + 1; b < nodes.length; b++) {
 					var q = nodes[b], dx = p.x - q.x, dy = p.y - q.y, d = Math.sqrt(dx * dx + dy * dy);
 					if (d < LINK) {
-						ctx.strokeStyle = "rgba(0,173,181," + (0.18 * (1 - d / LINK)) + ")";
+						ctx.strokeStyle = "rgba(0,173,181," + Math.min(0.6, 0.18 * (1 - d / LINK) * boost((p.x + q.x) / 2, (p.y + q.y) / 2)) + ")";
 						ctx.lineWidth = 1;
 						ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke();
 					}
@@ -129,9 +143,11 @@
 					ctx.strokeStyle = "rgba(0,173,181," + (0.35 * (1 - md / (LINK * 1.4))) + ")";
 					ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
 				}
-				ctx.fillStyle = "rgba(0,173,181,.55)";
-				ctx.beginPath(); ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2); ctx.fill();
+				var bp = boost(p.x, p.y);
+				ctx.fillStyle = "rgba(0,173,181," + Math.min(1, 0.55 * bp) + ")";
+				ctx.beginPath(); ctx.arc(p.x, p.y, 1.6 * (bp > 1.5 ? 1.4 : 1), 0, Math.PI * 2); ctx.fill();
 			}
+			pulse *= 0.965;
 		};
 
 		var loop = function () {
@@ -157,10 +173,109 @@
 			hero.addEventListener("mouseleave", function () { mouse.x = mouse.y = -9999; });
 		}
 		if ("IntersectionObserver" in window) {
-			new IntersectionObserver(function (en) { visible = en[0].isIntersecting; update(); }).observe(net);
+			new IntersectionObserver(function (en) {
+				var was = visible;
+				visible = en[0].isIntersecting;
+				if (visible && !was) firePulse();
+				update();
+			}).observe(net);
 		}
+		Array.prototype.forEach.call(document.querySelectorAll(".anchor_nav a, .arlo_tm_mobile_menu a"), function (a) {
+			a.addEventListener("click", firePulse);
+		});
 		update();
 	}
+
+	/* RewriteSafe cover: run the robot along its safe path on hover */
+	Array.prototype.forEach.call(document.querySelectorAll(".aac_robot"), function (svg) {
+		var card = svg.closest(".inner_list");
+		var motion = svg.querySelector("animateMotion");
+		if (card && motion && motion.beginElement) {
+			var bot = svg.querySelector(".bot");
+			card.addEventListener("mouseenter", function () { motion.beginElement(); bot.classList.add("go"); });
+		}
+	});
+
+	/* Experience: a teal line grows down the left edge as you scroll, ticking past each row */
+	var expWrap = document.querySelector(".aac_experience");
+	if (expWrap) {
+		var tl = document.createElement("div");
+		tl.className = "aac_timeline";
+		tl.innerHTML = "<span></span>";
+		expWrap.appendChild(tl);
+		var tlFill = tl.firstChild, ticks = [];
+
+		var layoutTimeline = function () {
+			var cards = Array.prototype.filter.call(expWrap.querySelectorAll("#experience_list > li"), function (li) { return li.offsetParent !== null; });
+			if (!cards.length) return;
+			var wr = expWrap.getBoundingClientRect();
+			var first = cards[0].querySelector(".inner").getBoundingClientRect();
+			var last = cards[cards.length - 1].getBoundingClientRect();
+			tl.style.left = (first.left - wr.left - 22) + "px";
+			tl.style.top = (first.top - wr.top) + "px";
+			tl.style.height = (last.bottom - first.top) + "px";
+			ticks.forEach(function (t) { tl.removeChild(t); });
+			ticks = [];
+			var seen = {};
+			cards.forEach(function (li) {
+				var top = Math.round(li.querySelector(".inner").getBoundingClientRect().top - first.top);
+				if (seen[top]) return;
+				seen[top] = true;
+				var b = document.createElement("b");
+				b.style.top = top + 24 + "px";
+				b.dataset.y = top + 24;
+				tl.appendChild(b);
+				ticks.push(b);
+			});
+			progressTimeline();
+		};
+		var progressTimeline = function () {
+			var r = tl.getBoundingClientRect();
+			var p = reduceMotion ? 1 : Math.max(0, Math.min(1, (window.innerHeight * 0.65 - r.top) / r.height));
+			tlFill.style.transform = "scaleY(" + p + ")";
+			var reach = p * r.height;
+			ticks.forEach(function (t) { t.classList.toggle("on", +t.dataset.y <= reach); });
+		};
+		window.addEventListener("scroll", progressTimeline, { passive: true });
+		window.addEventListener("resize", layoutTimeline);
+		window.addEventListener("load", layoutTimeline);
+		Array.prototype.forEach.call(document.querySelectorAll('.aac_filter[data-target="#experience_list"] a'), function (a) {
+			a.addEventListener("click", function () { setTimeout(layoutTimeline, 450); });
+		});
+		layoutTimeline();
+	}
+
+	/* Paper links: small tooltip with venue and authorship */
+	var papers = {
+		"doi.org/10.1145/3786148.3788627": "GREENS '26 &middot; ACM &middot; ICSE 2026 workshop, Rio de Janeiro &middot; 2nd author",
+		"arxiv.org/abs/2506.01774": "arXiv 2025 &middot; CECAM-Lorentz workshop, Lausanne &middot; co-author"
+	};
+	var tip = document.createElement("div");
+	tip.className = "aac_tip";
+	tip.setAttribute("role", "tooltip");
+	document.body.appendChild(tip);
+	var showTip = function (a, html) {
+		tip.innerHTML = html;
+		var r = a.getBoundingClientRect();
+		tip.style.left = "0px"; tip.style.top = "0px";
+		var tw = tip.offsetWidth, th = tip.offsetHeight;
+		var left = Math.max(8, Math.min(window.innerWidth - tw - 8, r.left + r.width / 2 - tw / 2));
+		tip.style.left = left + "px";
+		tip.style.top = (r.top - th - 10) + "px";
+		tip.classList.add("show");
+	};
+	var hideTip = function () { tip.classList.remove("show"); };
+	Array.prototype.forEach.call(document.querySelectorAll("a[href]"), function (a) {
+		Object.keys(papers).forEach(function (key) {
+			if (a.href.indexOf(key) !== -1) {
+				a.addEventListener("mouseenter", function () { showTip(a, papers[key]); });
+				a.addEventListener("focus", function () { showTip(a, papers[key]); });
+				a.addEventListener("mouseleave", hideTip);
+				a.addEventListener("blur", hideTip);
+			}
+		});
+	});
+	window.addEventListener("scroll", hideTip, { passive: true });
 
 	/* Project cards: gentle 3D tilt and light sheen */
 	if (finePointer && !reduceMotion) {

@@ -684,3 +684,170 @@
 
 @media (prefers-reduced-motion: reduce){
 }
+
+/* ---------- Project cover stories (shown on hover) ---------- */
+.aac_cover.aac_story{position: relative; overflow: hidden;}
+.aac_cover.aac_story > i,
+.aac_cover.aac_story > span{transition: opacity .35s ease, transform .4s ease;}
+.aac_story_fx{
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: opacity .35s ease;
+	pointer-events: none;
+}
+.aac_projects .inner_list:hover .aac_story > i,
+.aac_projects .inner_list:hover .aac_story > span{opacity: 0;}
+.aac_projects .inner_list:hover .aac_story_fx{opacity: 1;}
+
+/* Green Transpilation: energy bars */
+.aac_energy{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 40px;
+	box-sizing: border-box;
+}
+.aac_energy_row{display: flex; align-items: center; margin-bottom: 12px;}
+.aac_energy_row label{
+	width: 62px;
+	font-family: "Montserrat";
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: rgba(255,255,255,.7);
+}
+.aac_energy_bar{flex: 1; height: 6px; background-color: rgba(255,255,255,.08);}
+.aac_energy_bar i{
+	display: block;
+	height: 100%;
+	width: 0;
+	background-color: #00ADB5;
+	transition: width 1.1s cubic-bezier(.2,.7,.2,1) .15s;
+}
+.aac_energy_row:first-child .aac_energy_bar i{background-color: rgba(255,255,255,.45);}
+.aac_projects .inner_list:hover .aac_energy_bar i{width: var(--w);}
+.aac_energy p{
+	margin: 6px 0 0 62px;
+	font-family: "Montserrat";
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	color: #00ADB5;
+}
+
+/* Chess: knight's tour draws itself */
+.aac_knight .squares rect{fill: none; stroke: rgba(255,255,255,.12);}
+.aac_knight .trace,
+.aac_robot .trace{
+	fill: none;
+	stroke: #00ADB5;
+	stroke-width: 1.5;
+	stroke-dasharray: 1;
+	stroke-dashoffset: 1;
+	transition: stroke-dashoffset 1.6s ease .1s;
+}
+.aac_projects .inner_list:hover .aac_knight .trace,
+.aac_projects .inner_list:hover .aac_robot .trace{stroke-dashoffset: 0;}
+
+/* RewriteSafe: naive line through the obstacle, safe path around it */
+.aac_robot .naive{stroke: rgba(255,255,255,.18); stroke-width: 1; stroke-dasharray: 4 5;}
+.aac_robot .obstacle{fill: rgba(255,255,255,.06); stroke: rgba(255,255,255,.3);}
+.aac_robot .bot{fill: #00ADB5; opacity: 0;}
+.aac_robot .bot.go{opacity: 1;}
+
+/* G42: agent trace lights up step by step */
+.aac_trace{
+	display: flex;
+	align-items: center;
+	margin: -4px 0 16px 0;
+	font-family: "Montserrat";
+	font-size: 10px;
+	font-weight: 600;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	color: #9aa0a6;
+}
+.aac_trace em{
+	width: 18px;
+	height: 1px;
+	margin: 0 8px;
+	background-color: #ccc;
+	transition: background-color .3s ease;
+}
+.aac_trace span{transition: color .3s ease;}
+.aac_experience li:hover .aac_trace span,
+.aac_experience li:hover .aac_trace em{color: #00ADB5; background-color: transparent;}
+.aac_experience li:hover .aac_trace em{background-color: #00ADB5;}
+.aac_trace > :nth-child(2){transition-delay: .12s;}
+.aac_trace > :nth-child(3){transition-delay: .24s;}
+.aac_trace > :nth-child(4){transition-delay: .36s;}
+.aac_trace > :nth-child(5){transition-delay: .48s;}
+
+/* Experience timeline along the left edge */
+.aac_experience{position: relative;}
+.aac_timeline{
+	position: absolute;
+	top: 0;
+	width: 2px;
+	background-color: rgba(0,173,181,.15);
+	pointer-events: none;
+}
+.aac_timeline > span{
+	display: block;
+	height: 100%;
+	background-color: #00ADB5;
+	transform-origin: 0 0;
+	transform: scaleY(0);
+}
+.aac_timeline > b{
+	position: absolute;
+	left: -4px;
+	width: 10px;
+	height: 2px;
+	background-color: rgba(0,173,181,.35);
+	transition: background-color .3s ease, width .3s ease;
+}
+.aac_timeline > b.on{background-color: #00ADB5; width: 14px;}
+@media (max-width: 1200px){
+	.aac_timeline{display: none;}
+}
+
+/* Paper tooltip */
+.aac_tip{
+	position: fixed;
+	z-index: 9999;
+	max-width: 280px;
+	padding: 8px 12px;
+	background-color: #222831;
+	color: #fff;
+	font-family: "Montserrat";
+	font-size: 11px;
+	font-weight: 500;
+	letter-spacing: .5px;
+	line-height: 1.5;
+	border-radius: 3px;
+	box-shadow: 0 6px 18px rgba(0,0,0,.18);
+	opacity: 0;
+	transform: translateY(4px);
+	transition: opacity .2s ease, transform .2s ease;
+	pointer-events: none;
+}
+.aac_tip.show{opacity: 1; transform: none;}
+.aac_tip:after{
+	content: "";
+	position: absolute;
+	left: 50%;
+	bottom: -5px;
+	margin-left: -5px;
+	border: 5px solid transparent;
+	border-bottom: 0;
+	border-top-color: #222831;
+}
+
+@media (prefers-reduced-motion: reduce){
+	.aac_energy_bar i, .aac_knight .trace, .aac_robot .trace, .aac_trace span, .aac_trace em{transition: none !important;}
+}
