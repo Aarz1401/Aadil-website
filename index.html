@@ -118,6 +118,8 @@
 							<div class="bg_wrap">
 								<div class="overlay_image hero parallax" data-speed="0.1"></div>
 								<div class="overlay_color hero"></div>
+								<div class="aac_grid"></div>
+								<canvas class="aac_net" aria-hidden="true"></canvas>
 							</div>
 							<div class="content hero">
 								<div class="inner_content">
@@ -130,6 +132,7 @@
 									<div class="text_typing">
 										<p>I am a <span class="arlo_tm_animation_text_word"></span></p>
 									</div>
+									<div class="aac_status"><span class="aac_status_dot"></span>Currently: AI &amp; Innovation at UNDP AltFinLab &middot; CS at NYU Abu Dhabi</div>
 								</div>
 							</div>
 							<div class="arlo_tm_arrow_wrap bounce anchor">
@@ -169,8 +172,8 @@
 										</div>
 										<div class="definition">
 											<p>I'm a Computer Science student at <strong>New York University Abu Dhabi</strong> (Class of 2027), minoring in Applied Mathematics and Economics. I like problems where a working system matters more than a slide deck.</p>
-											<p>This summer at <strong>Inception (G42)</strong> I built Model Context Protocol tools and agent workflows that let LLMs work inside Outlook, Teams, SharePoint and Planner. I'm now on UNDP AltFinLab's Digital, AI &amp; Innovation team, and on the robotics track at NYUAD's REACH Lab.</p>
-											<p>On the research side I study how much energy software and AI actually use, and co-authored a <a href="https://arxiv.org/abs/2506.01774" target="_blank" rel="noopener">research agenda on green AI</a>. I've also worked on the venture side: scouting startups for Toyota at H-Farm in Venice, and interviewing GCC founders at Arrayah in Dubai.</p>
+											<p>This summer at <strong>Inception (G42)</strong> I built Model Context Protocol tools and agent workflows that let LLMs work inside Outlook, Teams, SharePoint and Planner. I'm now on UNDP AltFinLab's Digital, AI &amp; Innovation team, building AI tools and automations that non-technical staff can take over.</p>
+											<p>On the research side I study how much energy software and AI actually use. I'm second author on <a href="https://doi.org/10.1145/3786148.3788627" target="_blank" rel="noopener">Transpiling with LLMs for Energy Efficiency</a> (GREENS '26, ACM) and co-authored a <a href="https://arxiv.org/abs/2506.01774" target="_blank" rel="noopener">research agenda on green AI</a>. I've also worked on the venture side: scouting startups for Toyota at H-Farm in Venice, and interviewing GCC founders at Arrayah in Dubai.</p>
 										</div>
 										<div class="about_short_contact_wrap">
 											<ul>
@@ -263,7 +266,8 @@
 												<div class="text">
 													<p class="role">Intern, Digital, AI &amp; Innovation Team (part-time)<br>Sep 2026 - Present<br>Remote</p>
 													<ul class="points">
-														<li>Building reproducible AI tools and automations for hand-over to non-technical staff.</li>
+														<li>Building reproducible AI tools and automations, including automated outreach, that non-technical staff can take over.</li>
+														<li>Researching companies and running outreach, including to teams across UNDP, for a <strong>blockchain accelerator</strong>.</li>
 														<li>Selected via a final-stage assessment: a pilot proposal pitching a no-code app builder to <strong>20 food-security CSOs</strong> across the Arab States and Africa.</li>
 													</ul>
 												</div>
@@ -318,9 +322,9 @@
 												<div class="text">
 													<p class="role">Research Collaborator, with Prof. Jo&atilde;o Paulo Fernandes<br>Dec 2024 - May 2026<br>NYU Abu Dhabi</p>
 													<ul class="points">
-														<li>Co-authored <a href="https://arxiv.org/abs/2506.01774" target="_blank" rel="noopener">Greening AI-enabled Systems with Software Engineering</a>; attended the week-long workshop in Lausanne.</li>
-														<li>Related work at <a href="https://greensworkshop.github.io" target="_blank" rel="noopener">GREENS'26</a> (ICSE 2026 workshop).</li>
-														<li>Studied energy use across LLM-generated programs; explored evaluating AI coding agents (LangChain, SWE-bench).</li>
+														<li>Second author, <a href="https://doi.org/10.1145/3786148.3788627" target="_blank" rel="noopener">Transpiling with LLMs for Energy Efficiency</a> (GREENS '26, ACM; ICSE 2026 workshop, Rio de Janeiro): GPT-5-transpiled C++ kept <strong>87%</strong> of LeetCode solutions correct and cut runtime and energy by <strong>~97%</strong> vs. Python.</li>
+														<li>Co-authored <a href="https://arxiv.org/abs/2506.01774" target="_blank" rel="noopener">Greening AI-enabled Systems with Software Engineering</a>, from the CECAM-Lorentz workshop in Lausanne (Feb 2025).</li>
+														<li>Explored evaluating AI coding agents and software energy optimization (LangChain, SWE-bench).</li>
 													</ul>
 												</div>
 											</div>
@@ -330,10 +334,10 @@
 												<div class="icon"><img class="png" src="img/Aadil/nyu-logo.png" alt="NYU logo" /></div>
 												<div class="title_service"><h3>REACH Lab, NYUAD</h3></div>
 												<div class="text">
-													<p class="role">Student Research Assistant, Robotics<br>Sep 2026 - Present<br>Abu Dhabi, UAE</p>
+													<p class="role">Student Research Assistant, Robotics (LLM + System Integration)<br>Sep - Oct 2026<br>Abu Dhabi, UAE</p>
 													<ul class="points">
-														<li>LLM and system-integration track on a robotics project with <strong>KINESIS</strong> and <strong>AD Ports</strong>.</li>
-														<li>Supporting competition operations and ramping up on the robot stack and ROS.</li>
+														<li>Helped organize a robotics competition for <strong>AD Ports</strong> employees operating <strong>Unitree Go2W</strong> robots on logistics tasks.</li>
+														<li>Built a control panel / UI for the Go2W. Paused when AD Ports put the competition on hold.</li>
 													</ul>
 												</div>
 											</div>
@@ -402,6 +406,28 @@
 							</ul>
 							<div class="arlo_tm_list_wrap aac_projects aac_tilt">
 								<ul class="total gallery_zoom" id="project_list">
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="ai research">
+										<div class="inner_list">
+											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-robot"></i><span>Python &middot; MuJoCo &middot; Agents</span></div></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2026 &middot; AI Safety &amp; Robotics</p></div>
+												<div class="title_holder"><h3>RewriteSafe-Go2</h3></div>
+												<div class="definition"><p>Does a coding agent get less safe as it rewrites a robot controller to succeed? A simulated Unitree Go2-W with a deterministic verifier for task success, contact and bystander clearance, with held-out evaluations.</p></div>
+												<div class="read_more"><a href="https://github.com/Aarz1401/RewriteSafe-Go2" target="_blank" rel="noopener"><span>Github</span></a></div>
+											</div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="ai systems">
+										<div class="inner_list">
+											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-paper-plane"></i><span>Python &middot; Microsoft Graph &middot; Docker</span></div></div>
+											<div class="definitions_wrap">
+												<div class="date_wrap"><p>2026 &middot; Automation</p></div>
+												<div class="title_holder"><h3>Outreach Assistant</h3></div>
+												<div class="definition"><p>A prototype that finds relevant contacts from employee-authorized Microsoft 365 context and prepares Outlook drafts for human review. Nothing is ever sent automatically.</p></div>
+												<div class="read_more"><span class="aac_private"><i class="fas fa-lock"></i> Private Repo</span></div>
+											</div>
+										</div>
+									</li>
 									<li class="wow fadeInUp" data-wow-duration="1.2s" data-cat="ai systems">
 										<div class="inner_list">
 											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-code-branch"></i><span>TypeScript &middot; Code-OSS</span></div></div>
@@ -417,10 +443,13 @@
 										<div class="inner_list">
 											<div class="image_wrap"><div class="aac_cover"><i class="fas fa-chess-knight"></i><span>PyTorch &middot; CNN + Transformer</span></div></div>
 											<div class="definitions_wrap">
-												<div class="date_wrap"><p>2026 &middot; Deep Learning</p></div>
-												<div class="title_holder"><h3>Chess Style Fingerprint</h3></div>
-												<div class="definition"><p>Learns a style embedding for chess games from board tensors, with no player names or engine scores. Reaches 76% top-1 retrieval on held-out Tal vs Carlsen games.</p></div>
-												<div class="read_more"><span class="aac_private"><i class="fas fa-lock"></i> Private Repo</span></div>
+												<div class="date_wrap"><p>2026 &middot; Representation Learning</p></div>
+												<div class="title_holder"><h3>Chess Game Atlas</h3></div>
+												<div class="definition"><p>Embeds post-opening move sequences for similarity search and maps 1,000 real games from a 34,740-game corpus. Compare handcrafted, pretrained and learned fingerprints, replay games, or find related positions.</p></div>
+												<div class="read_more">
+													<a href="https://github.com/Aarz1401/Chess-ML-Project" target="_blank" rel="noopener"><span>Github</span></a>
+													<a href="https://aarz1401.github.io/Chess-ML-Project/" target="_blank" rel="noopener"><span>Website</span></a>
+												</div>
 											</div>
 										</div>
 									</li>
@@ -702,8 +731,15 @@
 									</li>
 									<li class="wow fadeInUp" data-wow-duration="1.2s">
 										<div class="inner">
+											<div class="icon"><i class="fas fa-file-alt"></i></div>
+											<div class="title_service"><h3>GREENS '26 Paper</h3></div>
+											<div class="text"><p class="role">ACM, ICSE 2026 workshop</p><p>Second author, <a href="https://doi.org/10.1145/3786148.3788627" target="_blank" rel="noopener">Transpiling with LLMs for Energy Efficiency</a>: LLM-transpiled C++ cut runtime and energy by ~97% vs. Python.</p></div>
+										</div>
+									</li>
+									<li class="wow fadeInUp" data-wow-duration="1.2s">
+										<div class="inner">
 											<div class="icon"><i class="fas fa-scroll"></i></div>
-											<div class="title_service"><h3>Green AI Paper</h3></div>
+											<div class="title_service"><h3>Green AI Agenda</h3></div>
 											<div class="text"><p class="role">arXiv 2506.01774, 2025</p><p>Co-authored <a href="https://arxiv.org/abs/2506.01774" target="_blank" rel="noopener">Greening AI-enabled Systems with Software Engineering</a>, a research agenda for sustainable AI.</p></div>
 										</div>
 									</li>

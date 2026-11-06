@@ -642,3 +642,65 @@
 	object-fit: cover;
 	box-sizing: border-box;
 }
+
+/* Awards: 2 x 2 on desktop */
+@media (min-width: 1041px){
+	.aac_awards .list_wrap > ul > li{width: 50%;}
+}
+
+/* Hero: faint grid and drifting constellation over the background */
+.arlo_tm_universal_box_wrap .aac_grid{
+	position: absolute;
+	inset: 0;
+	z-index: 21;
+	pointer-events: none;
+	background-image:
+		linear-gradient(rgba(0,173,181,.07) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(0,173,181,.07) 1px, transparent 1px);
+	background-size: 64px 64px;
+	-webkit-mask-image: radial-gradient(ellipse at center, #000 20%, transparent 75%);
+	        mask-image: radial-gradient(ellipse at center, #000 20%, transparent 75%);
+}
+.arlo_tm_universal_box_wrap .aac_net{
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 22;
+	pointer-events: none;
+}
+
+/* Hero status line */
+.arlo_tm_hero_header_wrap .aac_status{
+	clear: both;
+	display: inline-block;
+	margin-top: 22px;
+	padding: 7px 14px;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 12px;
+	letter-spacing: .5px;
+	color: rgba(255,255,255,.75);
+	border: 1px solid rgba(0,173,181,.35);
+	border-radius: 3px;
+	background-color: rgba(34,40,49,.45);
+}
+.aac_status_dot{
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	background-color: #00ADB5;
+	margin-right: 9px;
+	vertical-align: 1px;
+	animation: aac_blink 2s ease-in-out infinite;
+}
+@media (max-width: 600px){
+	.arlo_tm_hero_header_wrap .aac_status{font-size: 10px; padding: 6px 10px;}
+}
+
+/* Typed cursor in the template teal */
+.arlo_tm_hero_header_wrap .typed-cursor{color: #00ADB5;}
+
+@media (prefers-reduced-motion: reduce){
+	.aac_status_dot{animation: none;}
+}

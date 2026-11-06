@@ -70,10 +70,108 @@
 	if ("IntersectionObserver" in window && !reduceMotion) {
 		var io = new IntersectionObserver(function (entries) {
 			entries.forEach(function (e) {
-				if (e.isIntersecting) { e.target.classList.add("aac_in"); io.unobserve(e.target); }
+				if (e.isIntersecting) {
+					e.target.classList.add("aac_in");
+					var h = e.target.querySelector("h3");
+					if (h) decode(h);
+					io.unobserve(e.target);
+				}
 			});
 		}, { threshold: 0.4 });
 		Array.prototype.forEach.call(titles, function (t) { t.classList.add("aac_reveal"); io.observe(t); });
+	}
+
+	/* Title text resolves out of scrambled characters, left to right */
+	function decode(el) {
+		var target = el.textContent;
+		var glyphs = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#%&*+<>/";
+		var frame = 0, total = 22;
+		el.setAttribute("aria-label", target);
+		(function step() {
+			var done = Math.floor((frame / total) * target.length);
+			var out = "";
+			for (var k = 0; k < target.length; k++) {
+				var c = target.charAt(k);
+				out += (k < done || c === " ") ? c : glyphs.charAt(Math.floor(Math.random() * glyphs.length));
+			}
+			el.textContent = out;
+			if (frame++ < total) { setTimeout(step, 35); } else { el.textContent = target; }
+		})();
+	}
+
+	/* Hero: faint constellation of nodes that drift and link up near the cursor */
+	var net = document.querySelector(".aac_net");
+	if (net && net.getContext) {
+		var ctx = net.getContext("2d");
+		var W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+		var nodes = [], mouse = { x: -9999, y: -9999 }, running = false, visible = true;
+		var LINK = 130;
+
+		var size = function () {
+			var r = net.getBoundingClientRect();
+			W = r.width; H = r.height;
+			net.width = W * dpr; net.height = H * dpr;
+			ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+			var count = Math.min(70, Math.round((W * H) / 18000));
+			nodes = [];
+			for (var n = 0; n < count; n++) {
+				nodes.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25 });
+			}
+		};
+
+		var draw = function () {
+			ctx.clearRect(0, 0, W, H);
+			for (var a = 0; a < nodes.length; a++) {
+				var p = nodes[a];
+				if (!reduceMotion) {
+					p.x += p.vx; p.y += p.vy;
+					if (p.x < 0 || p.x > W) p.vx *= -1;
+					if (p.y < 0 || p.y > H) p.vy *= -1;
+				}
+				for (var b = a + 1; b < nodes.length; b++) {
+					var q = nodes[b], dx = p.x - q.x, dy = p.y - q.y, d = Math.sqrt(dx * dx + dy * dy);
+					if (d < LINK) {
+						ctx.strokeStyle = "rgba(0,173,181," + (0.18 * (1 - d / LINK)) + ")";
+						ctx.lineWidth = 1;
+						ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.stroke();
+					}
+				}
+				var mx = p.x - mouse.x, my = p.y - mouse.y, md = Math.sqrt(mx * mx + my * my);
+				if (md < LINK * 1.4) {
+					ctx.strokeStyle = "rgba(0,173,181," + (0.35 * (1 - md / (LINK * 1.4))) + ")";
+					ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+				}
+				ctx.fillStyle = "rgba(0,173,181,.55)";
+				ctx.beginPath(); ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2); ctx.fill();
+			}
+		};
+
+		var loop = function () {
+			if (!running) return;
+			draw();
+			requestAnimationFrame(loop);
+		};
+		var update = function () {
+			var should = visible && !document.hidden && !reduceMotion;
+			if (should && !running) { running = true; requestAnimationFrame(loop); }
+			if (!should) running = false;
+		};
+
+		size();
+		draw();
+		window.addEventListener("resize", function () { size(); draw(); });
+		document.addEventListener("visibilitychange", update);
+		if (hero && finePointer) {
+			hero.addEventListener("mousemove", function (e) {
+				var r = net.getBoundingClientRect();
+				mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+			});
+			hero.addEventListener("mouseleave", function () { mouse.x = mouse.y = -9999; });
+		}
+		if ("IntersectionObserver" in window) {
+			new IntersectionObserver(function (en) { visible = en[0].isIntersecting; update(); }).observe(net);
+		}
+		update();
 	}
 
 	/* Project cards: gentle 3D tilt and light sheen */
