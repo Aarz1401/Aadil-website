@@ -51,19 +51,7 @@
 		}
 	}
 
-	/* Hero background drifts gently with the mouse */
 	var hero = document.querySelector(".arlo_tm_hero_header_wrap");
-	var heroBg = document.querySelector(".overlay_image.hero");
-	if (hero && heroBg && finePointer && !reduceMotion) {
-		heroBg.style.transform = "scale(1.06)";
-		hero.addEventListener("mousemove", function (e) {
-			var r = hero.getBoundingClientRect();
-			var x = (e.clientX - r.left) / r.width - 0.5;
-			var y = (e.clientY - r.top) / r.height - 0.5;
-			heroBg.style.transform = "scale(1.06) translate(" + (-x * 18) + "px," + (-y * 18) + "px)";
-		});
-		hero.addEventListener("mouseleave", function () { heroBg.style.transform = "scale(1.06)"; });
-	}
 
 	/* Section titles reveal as they scroll into view */
 	var titles = document.querySelectorAll(".arlo_tm_title_holder");

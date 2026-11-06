@@ -525,10 +525,6 @@
 	opacity: 1;
 	transform: none;
 }
-.arlo_tm_universal_box_wrap .overlay_image.hero{
-	transition: transform .8s cubic-bezier(.2,.7,.2,1);
-	will-change: transform;
-}
 
 /* Section titles: bar grows, heading slides in */
 .aac_reveal:before{
