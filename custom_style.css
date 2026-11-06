@@ -633,3 +633,12 @@
 	}
 	.aac_clock:before{animation: none;}
 }
+
+/* Hero photo: keep it a centred circle inside its 200px box */
+.arlo_tm_hero_header_wrap .image_wrap img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	box-sizing: border-box;
+}
